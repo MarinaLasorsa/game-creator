@@ -21,7 +21,7 @@ class CharacterController extends Controller
      */
     public function create()
     {
-        //
+        return view('characters.create');
     }
 
     /**
@@ -29,7 +29,21 @@ class CharacterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'=> 'required|max:200|min:2',
+            'description'=>'required|max:1000',
+            'attack'=> 'required|integer',
+            'defence'=> 'required|integer',
+            'speed'=> 'required|integer',
+            'life'=> 'required|integer',
+
+        ]);
+
+        $form_data =$request->all();
+
+        $new_character =  Character::create($form_data);
+
+        return to_route('characters.show', $new_character);
     }
 
     /**
