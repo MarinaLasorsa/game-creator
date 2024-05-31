@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="container py-5">
-  <h1 class="text-center text-warning p-3">Weapons Table</h1>
+  <h1 class="text-center text-primary p-3">Weapons Table</h1>
 <table class="table table-dark table-hover ">
   <thead>
     <tr>
@@ -15,6 +15,10 @@
       <th scope="col">Damage_dice</th>
       
     </tr>
+    
+      <a class="btn btn-outline-warning mb-4" href="{{route('characters.index')}}">Characters</a>
+
+    
   </thead>
   <tbody>
   @foreach ($weapons as $weapon )
