@@ -7,7 +7,6 @@
   <h1 class="text-center text-warning p-3">Characters Table</h1>
 <table class="table table-dark table-hover ">
   <thead>
-    <a class="btn btn-outline-primary mb-4"href="{{route('index')}}">Weapons</a>
     <tr>
       <th scope="col">Name</th>
       <th scope="col">description</th>
@@ -21,7 +20,7 @@
   <tbody>
   @foreach ($characters as $character )
   <tr>
-      <th scope="row">{{$character->name}}</th>
+      <th scope="row"><a href="{{route('characters.show', $character)}}">{{$character->name}}</a></th>
       <td>{{$character->description}}</td>
       <td>{{$character->attack}}</td>
       <td>{{$character->defence}}</td>

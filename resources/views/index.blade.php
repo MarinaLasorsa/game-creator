@@ -15,8 +15,6 @@
       <th scope="col">Damage_dice</th>
       
     </tr>
-    
-      <a class="btn btn-outline-warning mb-4" href="{{route('characters.index')}}">Characters</a>
 
     
   </thead>
