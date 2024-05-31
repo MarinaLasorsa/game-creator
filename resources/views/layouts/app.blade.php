@@ -10,7 +10,6 @@
 </head>
 <body>
     {{--header--}}
-
     <main>
         @yield('content')
     </main>
