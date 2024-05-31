@@ -3,8 +3,9 @@
 @section('title', 'Laravel')
 
 @section('content')
-<div class="container">
-<table class="table">
+<div class="container py-5">
+  <h1 class="text-center text-warning p-3">Weapons Table</h1>
+<table class="table table-dark table-hover ">
   <thead>
     <tr>
       <th scope="col">Name</th>
