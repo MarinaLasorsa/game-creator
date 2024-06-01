@@ -59,7 +59,7 @@ class CharacterController extends Controller
      */
     public function edit(Character $character)
     {
-        //
+        return view('characters.edit', compact('character'));
     }
 
     /**
@@ -67,7 +67,12 @@ class CharacterController extends Controller
      */
     public function update(Request $request, Character $character)
     {
-        //
+        $form_data = $request->all();
+        $character->fill($form_data);
+        $character->save();
+        //oppure - fa subito il fill()e il salvataggio- save()
+        //$character->update();
+        return to_route('characters.show',$character);
     }
 
     /**

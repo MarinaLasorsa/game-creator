@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Laravel')
+@section('title', 'Characters')
 
 @section('content')
 <div class="container py-5">
