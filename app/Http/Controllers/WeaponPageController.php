@@ -9,9 +9,10 @@ class WeaponPageController extends Controller
 {
     //
     public function index(){
+        
         $weapons=  Weapon::all();
 
-        return view('index', compact('weapons'));
+        return view('weapons.index', compact('weapons'));
     }
 
 }

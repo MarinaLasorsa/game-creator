@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Weapon extends Model
 {
     use HasFactory;
+
+    // $fillable = ['name','category','weight','cost', 'damage_dice'];
 }
