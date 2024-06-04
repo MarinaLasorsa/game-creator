@@ -26,13 +26,13 @@ Route::middleware('auth', 'verified')
 ->prefix('admin')
 ->group(function () {
 
-  Route::get('/dashboard', function () {
-    return view('dashboard');
+  Route::get('/', function () {
+    return view('admin.dashboard');
   })->name('dashboard');
 
   //  Route::resource('weapons', WeaponPageController::class);
 
-  Route::get('/', [WeaponPageController::class, 'index'] )->name('index');
+  Route::get('/weapons', [WeaponPageController::class, 'index'] )->name('index');
 
   Route::resource('characters', CharacterController::class);
 });
