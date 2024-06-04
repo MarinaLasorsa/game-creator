@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\CharacterController;
+use App\Http\Controllers\Admin\CharacterController;
 use App\Http\Controllers\WeaponPageController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -23,11 +23,16 @@ Route::get('/', function () {
 
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
+
+Route::middleware('auth', 'verified')
+->name('admin.')
+->group(function () {
+
+  Route::get('/dashboard', function () {
+    return view('dashboard');
+  })->name('dashboard');
+
   //  Route::resource('weapons', WeaponPageController::class);
 
   Route::get('/', [WeaponPageController::class, 'index'] )->name('index');

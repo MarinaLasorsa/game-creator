@@ -20,7 +20,7 @@
   <tbody>
   @foreach ($characters as $character )
   <tr>
-      <th scope="row"><a href="{{route('characters.show', $character)}}">{{$character->name}}</a></th>
+      <th scope="row"><a href="{{route('admin.characters.show', $character)}}">{{$character->name}}</a></th>
       <td>{{$character->description}}</td>
       <td>{{$character->attack}}</td>
       <td>{{$character->defence}}</td>

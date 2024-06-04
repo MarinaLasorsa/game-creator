@@ -18,7 +18,7 @@
           <p class="card-text"><span class="fw-bold">life: </span> {{$character->life}}</p>
           <div id="form" class="d-flex justify-content-center align-items-center gap-4">
             <button class="btn btn-outline-danger" id="trash">Trash</button>
-            <a class="btn btn-outline-warning" href="{{route('characters.edit', $character)}}">Edit</a>
+            <a class="btn btn-outline-warning" href="{{route('admin.characters.edit', $character)}}">Edit</a>
           </div>
         </div>
         <script>
@@ -33,7 +33,7 @@
 
               form.innerHTML +=
                 `
-                          <form action="{{ route('characters.destroy', $character) }}" method="POST">
+                          <form action="{{ route('admin.characters.destroy', $character) }}" method="POST">
                           @method('DELETE')
                           @csrf
 
