@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Character;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreCharacterRequest;
+use App\Http\Requests\UpdateCharacterRequest;
 
 class CharacterController extends Controller
 {
@@ -27,9 +29,9 @@ class CharacterController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreCharacterRequest $request)
     {
-        $request->validate([
+        /*$request->validate([
             'name'=> 'required|max:200|min:2',
             'description'=>'required|max:1000',
             'attack'=> 'required|integer',
@@ -37,7 +39,9 @@ class CharacterController extends Controller
             'speed'=> 'required|integer',
             'life'=> 'required|integer',
 
-        ]);
+        ]);*/
+
+        $form_data = $request->validated();
 
         $form_data =$request->all();
 
@@ -65,9 +69,9 @@ class CharacterController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Character $character)
+    public function update(UpdateCharacterRequest $request, Character $character)
     {
-        $request->validate([
+        /*$request->validate([
             'name'=> 'required|max:200|min:2',
             'description'=>'required|max:1000',
             'attack'=> 'required|integer',
@@ -75,8 +79,9 @@ class CharacterController extends Controller
             'speed'=> 'required|integer',
             'life'=> 'required|integer',
 
-        ]);
+        ]);*/
 
+        $form_data = $request->validated();
         $form_data = $request->all();
         $character->fill($form_data);
         $character->save();
