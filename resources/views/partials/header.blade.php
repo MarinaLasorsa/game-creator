@@ -1,5 +1,5 @@
 <header>
-    <section class="py-5">
+    <section>
         {{--<nav class="container ">
             <div class="d-flex justify-content-start align-items-center gap-5">
                 <a class="text-warning" href="{{route('characters.index')}}">CHARACTERS</a>
@@ -28,11 +28,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
+                        <li class="nav-item d-flex">
                             <a class="nav-link" href="{{url('/') }}">{{ __('Home') }}</a>
-                            <a class="text-warning" href="{{route('admin.characters.index')}}">CHARACTERS</a>
-                            <a class="text-primary"  href="{{route('admin.index')}}">WEAPONS</a>
-                            <a class="text-success" href="{{route('admin.characters.create')}}">CREATE NEW CHARACTERS</a>
+                            <a class="nav-link text-warning" href="{{route('admin.characters.index')}}">Characters</a>
+                            <a class="nav-link text-primary"  href="{{route('admin.index')}}">Weapons</a>
+                            <a class="nav-link text-success" href="{{route('admin.characters.create')}}">Create New Characters</a>
                         </li>
                     </ul>
 
@@ -55,7 +55,7 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ url('dashboard') }}">{{__('Dashboard')}}</a>
+                                <a class="dropdown-item" href="{{ url('admin/dashboard') }}">{{__('Dashboard')}}</a>
                                 <a class="dropdown-item" href="{{ url('profile') }}">{{__('Profile')}}</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
