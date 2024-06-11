@@ -15,6 +15,8 @@
       <th scope="col">speed</th>
       <th scope="col">life</th>
       
+
+      
     </tr>
   </thead>
   <tbody>
@@ -26,6 +28,8 @@
       <td>{{$character->defence}}</td>
       <td>{{$character->speed}}</td>
       <td>{{$character->life}}</td>
+      
+      
     </tr>
   @endforeach
   </tbody>

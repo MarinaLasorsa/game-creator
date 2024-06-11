@@ -15,6 +15,7 @@ class CharacterController extends Controller
     public function index()
     {
         $characters = Character::all();
+        
         return view('admin.characters.index',compact('characters'));
     }
 

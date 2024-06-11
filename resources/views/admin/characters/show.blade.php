@@ -16,6 +16,21 @@
           <p class="card-text"><span class="fw-bold">Defence: </span> {{$character->defence}}</p>
           <p class="card-text"><span class="fw-bold">Speed: </span>{{$character->speed}}</p>
           <p class="card-text"><span class="fw-bold">life: </span> {{$character->life}}</p>
+          <p>
+            Weapons:
+            <ul>
+              @foreach ($character->weapons as $current_weapon)
+
+              <li>
+
+                {{$current_weapon->name}}
+              </li>
+      
+      
+              @endforeach
+
+            </ul>
+      </p>
           <div id="form" class="d-flex justify-content-center align-items-center gap-4">
             <button class="btn btn-outline-danger" id="trash">Trash</button>
             <a class="btn btn-outline-warning" href="{{route('admin.characters.edit', $character)}}">Edit</a>

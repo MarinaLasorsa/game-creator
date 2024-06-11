@@ -10,4 +10,12 @@ class Weapon extends Model
     use HasFactory;
 
     // $fillable = ['name','category','weight','cost', 'damage_dice'];
+
+
+
+    public function characters()
+    {
+        return $this->belongsToMany(Character::class);
+    }
+
 }
