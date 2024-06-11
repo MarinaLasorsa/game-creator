@@ -22,7 +22,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             WeaponSeeder::class,
+            TypeSeeder::class,
             CharacterSeeder::class,
+            
            
 
         

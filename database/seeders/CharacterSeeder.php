@@ -7,6 +7,7 @@ use Faker\Generator as Faker;
 use App\Models\Weapon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Type;
 
 class CharacterSeeder extends Seeder
 {
@@ -18,6 +19,8 @@ class CharacterSeeder extends Seeder
     { 
 
             $weapons_ids = Weapon::all()->pluck('id')->all();
+            $types_ids= Type::all()->pluck('id')->all();
+
 
         for($i = 0; $i < 10; $i++){
             $new_character = new Character();
@@ -28,8 +31,11 @@ class CharacterSeeder extends Seeder
             $new_character->defence = $faker->randomNumber(3);
             $new_character->speed = $faker->randomNumber(3);
             $new_character->life = $faker->randomNumber(3);
+            $new_character->type_id = $faker->randomElement($types_ids);
 
             $new_character->save();
+
+            
 
             $random_weapon_ids = $faker->randomElements($weapons_ids, null);
 
