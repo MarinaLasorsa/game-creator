@@ -35,11 +35,15 @@ class CharacterSeeder extends Seeder
 
             $new_character->save();
 
-            
-
             $random_weapon_ids = $faker->randomElements($weapons_ids, null);
 
-            $new_character->weapons()->attach($random_weapon_ids,['quantity' => $faker->numberBetween(1,9)]);
+            $weapons_with_random_qty = [];
+
+            foreach ($random_weapon_ids as $random_weapon_id){
+                $weapons_with_random_qty[$random_weapon_id] = ['quantity' => $faker->numberBetween(1,9)];
+            }
+
+            $new_character->weapons()->attach($weapons_with_random_qty);
 
         }
     }
