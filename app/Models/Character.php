@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Type;
 
 class Character extends Model
 {
@@ -17,6 +18,11 @@ class Character extends Model
         return $this->belongsToMany(Weapon::class);
     }
 
-
-
+    public function type(){
+        return $this->belongsTo(Type::class);
+    }
 }
+
+
+
+
