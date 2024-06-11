@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Character;
+use App\Models\Weapon;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreCharacterRequest;
 use App\Http\Requests\UpdateCharacterRequest;
@@ -15,7 +16,7 @@ class CharacterController extends Controller
     public function index()
     {
         $characters = Character::all();
-        
+
         return view('admin.characters.index',compact('characters'));
     }
 
@@ -24,7 +25,8 @@ class CharacterController extends Controller
      */
     public function create()
     {
-        return view('admin.characters.create');
+        $weapons = Weapon::orderBy('name', 'asc')->get();
+        return view('admin.characters.create', compact('weapons'));
     }
 
     /**
@@ -47,6 +49,10 @@ class CharacterController extends Controller
         $form_data =$request->all();
 
         $new_character =  Character::create($form_data);
+        if($request->has('weapons')){
+            
+            $new_character->weapons()->attach($request->weapons);
+        }
 
         return to_route('admin.characters.show', $new_character);
     }

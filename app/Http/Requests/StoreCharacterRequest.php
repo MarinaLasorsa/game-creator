@@ -27,7 +27,8 @@ class StoreCharacterRequest extends FormRequest
             'attack'=> 'required|integer',
             'defence'=> 'required|integer',
             'speed'=> 'required|integer',
-            'life'=> 'required|integer'
+            'life'=> 'required|integer',
+            'weapon'=> 'nullable'
         ];
     }
 }
