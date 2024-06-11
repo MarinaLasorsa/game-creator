@@ -43,6 +43,15 @@
                         <input type="number" min="0" max="999" step="1" name="life" class="form-control" id="life"
                             placeholder="inserisci il valore della vità" value="{{old('life',$character->life)}}">
                     </div>
+                    <div class="mb-3 d-flex flex-wrap gap-2">
+                        @foreach ($weapons as $weapon)
+                        <div class="form-group">
+                            <input class="form-check-input" @checked(in_array($weapon->id, old('weapons', $character->weapons->pluck('id')->all() ))) type="checkbox" id="weapons-{{$weapon->id}}" name="weapons[]" value="{{$weapon->id}}">
+                            <label class="form-check-label " for="weapons-{{$weapon->id}}"> -> {{$weapon->name}}</label>
+
+                        </div>
+                        @endforeach
+                    </div>
 
                     <div class="mb-3">
                         <label for="description" class="form-label">Descrizione</label>

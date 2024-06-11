@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
 use App\Http\Controllers\Controller;
 use App\Models\Character;
 use App\Models\Weapon;
@@ -17,7 +18,7 @@ class CharacterController extends Controller
     {
         $characters = Character::all();
 
-        return view('admin.characters.index',compact('characters'));
+        return view('admin.characters.index', compact('characters'));
     }
 
     /**
@@ -46,11 +47,11 @@ class CharacterController extends Controller
 
         $form_data = $request->validated();
 
-        $form_data =$request->all();
+        $form_data = $request->all();
 
-        $new_character =  Character::create($form_data);
-        if($request->has('weapons')){
-            
+        $new_character = Character::create($form_data);
+        if ($request->has('weapons')) {
+
             $new_character->weapons()->attach($request->weapons);
         }
 
@@ -70,7 +71,8 @@ class CharacterController extends Controller
      */
     public function edit(Character $character)
     {
-        return view('admin.characters.edit', compact('character'));
+        $weapons = Weapon::orderBy('name', 'asc')->get();
+        return view('admin.characters.edit', compact('character', 'weapons'));
     }
 
     /**
@@ -92,9 +94,17 @@ class CharacterController extends Controller
         $form_data = $request->all();
         $character->fill($form_data);
         $character->save();
+
         //oppure - fa subito il fill()e il salvataggio- save()
         //$character->update();
-        return to_route('admin.characters.show',$character);
+        if ($request->has('weapons')) {
+
+            $character->weapons()->sync($request->weapons);
+        }else{
+            $character->weapons()->detach();
+        }
+
+        return to_route('admin.characters.show', $character);
     }
 
     /**
