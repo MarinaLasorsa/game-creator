@@ -24,9 +24,11 @@
 <body>
     <div id="app">
 
-
+        @auth
         @include('partials/header') 
-
+        @else
+        @include('partials/gest_header') 
+        @endif
         <main class="">
             @yield('content')
         </main>
