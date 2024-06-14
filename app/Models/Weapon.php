@@ -15,7 +15,7 @@ class Weapon extends Model
 
     public function characters()
     {
-        return $this->belongsToMany(Character::class);
+        return $this->belongsToMany(Character::class)->withPivot('quantity');
     }
 
 }

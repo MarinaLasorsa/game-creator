@@ -18,12 +18,22 @@
           <p class="card-text"><span class="fw-bold">life: </span> {{$character->life}}</p>
           <p>
             Weapons:
-            <ul>
+            <ul class="d-flex flex-wrap align-items-center gap-3">
+              
               @foreach ($character->weapons as $current_weapon)
 
               <li>
-
-                {{$current_weapon->name}}
+                <div @class([
+                  'badge text-bg-info position-relative' => $current_weapon->category === 'Simple Melee Weapons',
+                  'badge text-bg-success position-relative' => $current_weapon->category === 'Simple Ranged Weapons',
+                  'badge text-bg-warning position-relative' => $current_weapon->category === 'Martial Melee Weapons',
+                  'badge text-bg-danger position-relative' => $current_weapon->category === 'Martial Ranged Weapons',
+                ])>
+                  {{$current_weapon->name}} 
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark">
+                    {{ $current_weapon->pivot->quantity }}
+                  </span>
+                </div>
               </li>
       
       

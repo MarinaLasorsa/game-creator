@@ -15,7 +15,7 @@ class Character extends Model
 
 
     public function weapons(){
-        return $this->belongsToMany(Weapon::class);
+        return $this->belongsToMany(Weapon::class)->withPivot('quantity');
     }
 
     public function type(){
