@@ -12,7 +12,7 @@
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
                     <div class="logo_laravel">
-                        <img src="{{ Vite::asset('resources/img/logo.png') }}" width="100">
+                        <img src="{{ Vite::asset('resources/img/utility/logo.png') }}" width="100">
                     </div>
                     {{-- config('app.name', 'Laravel') --}}
                 </a>
