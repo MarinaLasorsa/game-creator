@@ -3,7 +3,10 @@
 @use './partials/font_icon';
 @use './partials/common';
 @use './partials/layout';
-
+html{
+    cursor:url('../img/utility/cursor.svg'), auto;
+}
 body{
     background: rgba(124, 119, 113, 0.2);
+    cursor:url('../img/utility/cursor.svg'), auto;
 }

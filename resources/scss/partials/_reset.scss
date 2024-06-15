@@ -7,7 +7,11 @@
 
 a {
     text-decoration: none;
-
+    cursor:url('../img/utility/pointer.svg'), auto;
+}
+.btn,
+button{
+    cursor:url('../img/utility/pointer.svg'), auto;
 }
 
 img {

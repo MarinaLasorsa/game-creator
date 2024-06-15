@@ -15,7 +15,7 @@
 
                 <img src="{{ Vite::asset('resources/img/utility/hr2.svg') }}" class="w-100">
 
-                <p class="text-white text-center eb-garamond px-3 bg-dark bg-opacity-25 my-2">
+                <p class="text-white text-center eb-garamond px-3 bg-dark bg-opacity-50 my-2 rounded">
                     Imbarcati in un'avventura epica con "Guerrieri delle Terre Selvagge", un gioco di strategia
                     avvincente
                     dove
@@ -53,7 +53,7 @@
                                 <img src="{{ Vite::asset($type->img_carosel) }}" class="d-block w-100" alt="...">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>{{ $type->name }}</h5>
-                                    <p>{{ $type->description }}</p>
+                                    <p>{{ strstr($type->description,'.',true) }}.</p>
                                 </div>
                             </div>
                         @endforeach
