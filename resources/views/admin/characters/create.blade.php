@@ -27,6 +27,30 @@
                         <input type="number" min="0" max="999" step="1" name="attack" class="form-control" id="attack" placeholder="inserisci il valore di attacco" value="{{old('attack')}}">
                     </div>
 
+                    <div class="mb-3">
+                        <label for="genre" class="form-label">Genere</label>
+                        <select class="form-control" name="genre" id="genre">
+    
+                            <option value="">Seleziona Genere</option>
+                            
+                                <option @selected('male' == old('genre')) value="male">maschio</option>
+                                <option @selected('female' == old('genre')) value="female">femmina</option>
+                            
+    
+                        </select>
+                    </div>
+
+                     <div class="mb-3">
+                        <label for="type_id" class="form-label">Titolo</label>
+                        <select class="form-control" name="type_id" id="type_id">
+                          <option value="">-- Seleziona Classe --</option>
+                          @foreach($types as $type) 
+                            <option @selected( $type->id == old('type_id') ) value="{{ $type->id }}"> {{ $type->name }}</option>
+                          @endforeach
+                        </select>
+                      </div> 
+    
+
 
 
                     <div class="mb-3">

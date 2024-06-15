@@ -22,12 +22,14 @@ class CharacterSeeder extends Seeder
             $weapons_ids = Weapon::all()->pluck('id')->all();
             $types_ids= Type::all()->pluck('id')->all();
             $user_ids= User::all()->pluck('id')->all();
+            
 
 
         for($i = 0; $i < 20; $i++){
             $new_character = new Character();
             
             $new_character->name = $faker->name();
+            $new_character->genre = $faker->randomElement(['male','female']);
             $new_character->description = $faker->sentence();
             $new_character->attack = $faker->randomNumber(3);
             $new_character->defence = $faker->randomNumber(3);

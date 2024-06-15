@@ -8,6 +8,7 @@ use App\Models\Weapon;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreCharacterRequest;
 use App\Http\Requests\UpdateCharacterRequest;
+use App\Models\Type;
 
 class CharacterController extends Controller
 {
@@ -26,8 +27,9 @@ class CharacterController extends Controller
      */
     public function create()
     {
+        $types = Type::orderBy('name')->get();
         $weapons = Weapon::orderBy('name', 'asc')->get();
-        return view('admin.characters.create', compact('weapons'));
+        return view('admin.characters.create', compact('weapons','types'));
     }
 
     /**
@@ -44,7 +46,7 @@ class CharacterController extends Controller
             'life'=> 'required|integer',
 
         ]);*/
-
+       // dd($request);
         $form_data = $request->validated();
 
         $form_data = $request->all();
@@ -72,8 +74,9 @@ class CharacterController extends Controller
      */
     public function edit(Character $character)
     {
+        $types = Type::orderBy('name')->get();   
         $weapons = Weapon::orderBy('name', 'asc')->get();
-        return view('admin.characters.edit', compact('character', 'weapons'));
+        return view('admin.characters.edit', compact('character', 'weapons','types'));
     }
 
     /**

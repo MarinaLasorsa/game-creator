@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('characters', function (Blueprint $table) {
             $table->id();
             $table->string('name',200);
+            $table->string('genre',7);
             $table->text('description');
             $table->integer('attack');
             $table->integer('defence');

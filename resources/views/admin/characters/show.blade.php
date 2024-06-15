@@ -11,6 +11,10 @@
           <h1 class="text-center text-warning p-3">{{$character->name}}</h1>
         </div>
         <div class="card-body">
+          <p class="card-text"><span class="fw-bold">Genere: </span>{{$character->genre}}</p>
+          <p class="card-text"><span class="fw-bold">Classe: </span>{{$character->type->name}}</p>
+
+
           <p class="card-text"><span class="fw-bold">Description: </span>{{$character->description}}</p>
           <p class="card-text"><span class="fw-bold">Attack: </span> {{$character->attack}}</p>
           <p class="card-text"><span class="fw-bold">Defence: </span> {{$character->defence}}</p>

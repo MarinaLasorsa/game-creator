@@ -23,6 +23,8 @@ class UpdateCharacterRequest extends FormRequest
     {
         return [
             'name'=> 'required|max:200|min:2',
+            'type_id'=>'required|exists:types,id',
+            'genre'=> 'required',
             'description'=>'required|max:1000',
             'attack'=> 'required|integer',
             'defence'=> 'required|integer',
