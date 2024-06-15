@@ -34,7 +34,7 @@ Route::middleware(['auth', 'verified'])
 
   //  Route::resource('weapons', WeaponPageController::class);
 
-  Route::get('/weapons', [WeaponPageController::class, 'index'] )->name('index');
+  Route::resource('weapons', WeaponPageController::class);
 
   Route::resource('characters', CharacterController::class);
 });

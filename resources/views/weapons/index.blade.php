@@ -21,7 +21,7 @@
   <tbody>
   @foreach ($weapons as $weapon )
   <tr>
-      <th scope="row">{{$weapon->name}}</th>
+      <th scope="row"><a href="{{route('admin.weapons.show', $weapon)}}">{{$weapon->name}}</a></th>
       <td>{{$weapon->category}}</td>
       <td>{{$weapon->cost}}</td>
       <td>{{$weapon->weight}}</td>

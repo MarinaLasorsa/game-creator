@@ -27,7 +27,7 @@
                         <li class="nav-item d-flex">
                             <a class="nav-link" href="{{url('/') }}">{{ __('Home') }}</a>
                             <a class="nav-link text-warning" href="{{route('admin.characters.index')}}">Characters</a>
-                            <a class="nav-link text-primary"  href="{{route('admin.index')}}">Weapons</a>
+                            <a class="nav-link text-primary"  href="{{route('admin.weapons.index')}}">Weapons</a>
                             <a class="nav-link text-success" href="{{route('admin.characters.create')}}">Create New Characters</a>
                         </li>
                     </ul>

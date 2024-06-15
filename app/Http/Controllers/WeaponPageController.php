@@ -15,4 +15,13 @@ class WeaponPageController extends Controller
         return view('weapons.index', compact('weapons'));
     }
 
+
+    public function show(Weapon $weapon)
+    {
+        //
+        return view('weapons.show', compact('weapon'));
+    }
 }
+
+
+
