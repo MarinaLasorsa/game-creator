@@ -8,12 +8,13 @@
 <table class="table table-dark table-hover ">
   <thead>
     <tr>
-      <th scope="col">Nome</th>
-      <th scope="col">Descrizione</th>
-      <th scope="col">Attacco</th>
-      <th scope="col">Difesa</th>
-      <th scope="col">Velocità</th>
-      <th scope="col">Vita</th>
+      <th scope="col">Creato da</th>
+      <th scope="col">Name</th>
+      <th scope="col">description</th>
+      <th scope="col">attack</th>
+      <th scope="col">defence</th>
+      <th scope="col">speed</th>
+      <th scope="col">life</th>
       
 
       
@@ -22,7 +23,8 @@
   <tbody>
   @foreach ($characters as $character )
   <tr>
-      <th scope="row"><a class="link-orange" href="{{route('admin.characters.show', $character)}}">{{$character->name}}</a></th>
+    <th>{{$character->user->name}}</th>  
+    <th scope="row"><a  class="link-orange"  href="{{route('admin.characters.show', $character)}}">{{$character->name}}</a></th>
       <td>{{$character->description}}</td>
       <td>{{$character->attack}}</td>
       <td>{{$character->defence}}</td>
