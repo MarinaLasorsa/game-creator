@@ -6,5 +6,5 @@
 @if (Route::has('register'))<a class="fs-1 btn-rady-to-play" href="{{ route('register') }}">READY TO PLAY</a>
 
 @endif
-</div>                
+</div> 
 @endsection
