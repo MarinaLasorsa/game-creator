@@ -34,14 +34,14 @@ class TypeSeeder extends Seeder
                 'img-carosel' => 'resources/img/carosel/3.png',
                 'img-m' => 'resources/img/players/5.png',
                 'img-f' => 'resources/img/players/6.png',
-                'description' => "sarai la forza bruta e il cuore pulsante del tuo esercito. Armato di spade possenti, scudi indistruttibili e un coraggio senza pari, il Warrior è in prima linea in ogni battaglia, affrontando nemici con una combinazione letale di forza fisica e abilità tattiche. La tua resistenza e il tuo addestramento ti rendono un combattente implacabile, capace di incassare colpi e rispondere con attacchi devastanti. Guidi i tuoi compagni con l'esempio, ispirando e proteggendo con il tuo spirito indomito. Sei pronto a impugnare le armi e a combattere per la gloria?"
+                'description' => "Sarai la forza bruta e il cuore pulsante del tuo esercito. Armato di spade possenti, scudi indistruttibili e un coraggio senza pari, il Warrior è in prima linea in ogni battaglia, affrontando nemici con una combinazione letale di forza fisica e abilità tattiche. La tua resistenza e il tuo addestramento ti rendono un combattente implacabile, capace di incassare colpi e rispondere con attacchi devastanti. Guidi i tuoi compagni con l'esempio, ispirando e proteggendo con il tuo spirito indomito. Sei pronto a impugnare le armi e a combattere per la gloria?"
             ],
             [
                 'name' => 'Troll',
                 'img-carosel' => 'resources/img/carosel/4.png',
                 'img-m' => 'resources/img/players/7.png',
                 'img-f' => 'resources/img/players/8.png',
-                'description' => "incarnerai la potenza selvaggia e primordiale. Con la tua stazza imponente e forza brutale, il Troll è una macchina da guerra inarrestabile, capace di seminare il caos tra le fila nemiche. Dotato di un'incredibile capacità di rigenerazione, ti rialzi rapidamente dopo ogni colpo, rendendoti un avversario formidabile da abbattere. La tua connessione con la natura ti permette di sfruttare il terreno a tuo vantaggio, tendendo imboscate mortali e utilizzando abilità uniche per sorprendere i nemici. Sei pronto a scatenare la furia della natura e a conquistare le Terre Selvagge con la tua forza devastante?"
+                'description' => "Incarnerai la potenza selvaggia e primordiale. Con la tua stazza imponente e forza brutale, il Troll è una macchina da guerra inarrestabile, capace di seminare il caos tra le fila nemiche. Dotato di un'incredibile capacità di rigenerazione, ti rialzi rapidamente dopo ogni colpo, rendendoti un avversario formidabile da abbattere. La tua connessione con la natura ti permette di sfruttare il terreno a tuo vantaggio, tendendo imboscate mortali e utilizzando abilità uniche per sorprendere i nemici. Sei pronto a scatenare la furia della natura e a conquistare le Terre Selvagge con la tua forza devastante?"
             ],
             [
                 'name' => 'Elf',
@@ -69,14 +69,14 @@ class TypeSeeder extends Seeder
                 'img-carosel' => 'resources/img/carosel/8.png',
                 'img-m' => 'resources/img/players/15.png',
                 'img-f' => 'resources/img/players/16.png',
-                'description' => "sarai il predatore silenzioso e letale. Maestro dell'arco e delle trappole, il Hunter eccelle nell'arte dell'inseguimento e dell'imboscata, colpendo i nemici da lontano con precisione mortale. Accompagnato da un fidato compagno animale, il Hunter sfrutta la simbiosi con la natura per individuare e neutralizzare le minacce prima che possano avvicinarsi. La tua conoscenza del territorio ti permette di muoverti furtivamente e di trasformare l'ambiente circostante in una trappola mortale per i tuoi avversari. Sei pronto a padroneggiare l'arte della caccia e a difendere le Terre Selvagge con astuzia e precisione infallibile?"
+                'description' => "Sarai il predatore silenzioso e letale. Maestro dell'arco e delle trappole, il Hunter eccelle nell'arte dell'inseguimento e dell'imboscata, colpendo i nemici da lontano con precisione mortale. Accompagnato da un fidato compagno animale, il Hunter sfrutta la simbiosi con la natura per individuare e neutralizzare le minacce prima che possano avvicinarsi. La tua conoscenza del territorio ti permette di muoverti furtivamente e di trasformare l'ambiente circostante in una trappola mortale per i tuoi avversari. Sei pronto a padroneggiare l'arte della caccia e a difendere le Terre Selvagge con astuzia e precisione infallibile?"
             ],
             [
                 'name' => 'Monk',
                 'img-carosel' => 'resources/img/carosel/9.png',
                 'img-m' => 'resources/img/players/17.png',
                 'img-f' => 'resources/img/players/18.png',
-                'description' => "incarnerai la disciplina, la spiritualità e la maestria nelle arti marziali. Addestrato in templi nascosti e fortezze remote, il Monk combina una forza fisica straordinaria con una mente zen. Con una padronanza del combattimento a mani nude e delle armi tradizionali, puoi sferrare colpi rapidi e precisi, immobilizzare i nemici e proteggere i tuoi alleati con movimenti fluidi e letali. La tua connessione con le energie interiori ti consente di canalizzare poteri mistici per guarire, proteggere e infliggere danni devastanti. Sei pronto a dimostrare il potere della tua disciplina e a portare armonia nelle Terre Selvagge con la saggezza e la forza di un vero Monk?"
+                'description' => "Incarnerai la disciplina, la spiritualità e la maestria nelle arti marziali. Addestrato in templi nascosti e fortezze remote, il Monk combina una forza fisica straordinaria con una mente zen. Con una padronanza del combattimento a mani nude e delle armi tradizionali, puoi sferrare colpi rapidi e precisi, immobilizzare i nemici e proteggere i tuoi alleati con movimenti fluidi e letali. La tua connessione con le energie interiori ti consente di canalizzare poteri mistici per guarire, proteggere e infliggere danni devastanti. Sei pronto a dimostrare il potere della tua disciplina e a portare armonia nelle Terre Selvagge con la saggezza e la forza di un vero Monk?"
             ],
 
         ];

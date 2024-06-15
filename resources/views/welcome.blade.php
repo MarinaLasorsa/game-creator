@@ -34,96 +34,37 @@
                 <a href="{{ route('register') }}">
                     <h2 class="text-white text-center eb-garamond">Scegli il tuo ruolo e iscriviti!!!!</h2>
                 </a>
-                <div id="carouselExampleCaptions" class="carousel slide">
+                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                            aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                            aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                            aria-label="Slide 3"></button>
+                        @foreach ($types as $type)
+                            @if ($loop->first)
+                                <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                            @else
+                                <button type="button" data-bs-target="#carouselExampleAutoplaying"
+                                    data-bs-slide-to="{{$loop->index}}" aria-label="{{'Slide '.($loop->index+1)}}"></button>
+                            @endif
+                        @endforeach
                     </div>
                     <div class="carousel-inner">
 
-                        <div class="carousel-item active">
-                            <img src="{{ Vite::asset('resources/img/carosel/1.png') }}" class="d-block w-100"
-                                alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Cleric</h5>
-                                <p>Some representative placeholder content for the first slide.</p>
+                        @foreach ($types as $type)
+                            <div @class(['carousel-item', 'active' => $loop->first])>
+                                <img src="{{ Vite::asset($type->img_carosel) }}" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>{{ $type->name }}</h5>
+                                    <p>{{ $type->description }}</p>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="carousel-item active">
-                            <img src="{{ Vite::asset('resources/img/carosel/2.png') }}" class="d-block w-100"
-                                alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Wizard</h5>
-                                <p>Some representative placeholder content for the first slide.</p>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item active">
-                            <img src="{{ Vite::asset('resources/img/carosel/3.png') }}" class="d-block w-100"
-                                alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Warrior</h5>
-                                <p>Some representative placeholder content for the first slide.</p>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item active">
-                            <img src="{{ Vite::asset('resources/img/carosel/3.png') }}" class="d-block w-100"
-                                alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>First slide label</h5>
-                                <p>Some representative placeholder content for the first slide.</p>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item active">
-                            <img src="{{ Vite::asset('resources/img/carosel/3.png') }}" class="d-block w-100"
-                                alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>First slide label</h5>
-                                <p>Some representative placeholder content for the first slide.</p>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item active">
-                            <img src="{{ Vite::asset('resources/img/carosel/3.png') }}" class="d-block w-100"
-                                alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>First slide label</h5>
-                                <p>Some representative placeholder content for the first slide.</p>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item active">
-                            <img src="{{ Vite::asset('resources/img/carosel/3.png') }}" class="d-block w-100"
-                                alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>First slide label</h5>
-                                <p>Some representative placeholder content for the first slide.</p>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item active">
-                            <img src="{{ Vite::asset('resources/img/carosel/3.png') }}" class="d-block w-100"
-                                alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>First slide label</h5>
-                                <p>Some representative placeholder content for the first slide.</p>
-                            </div>
-                        </div>
+                        @endforeach
 
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
                         data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
                         data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>

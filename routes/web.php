@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CharacterController;
 use App\Http\Controllers\WeaponPageController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Type;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,7 +18,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+  $types = Type::all();
+    return view('welcome', compact('types'));
 });
 
 
