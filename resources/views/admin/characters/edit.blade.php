@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('title', 'Edit')
+@auth
+@if ($character->user_id === Auth::id())    
 
 @section('content')
 
@@ -108,3 +110,7 @@
     </main>
 
 @endsection
+
+    
+@endif
+@endauth

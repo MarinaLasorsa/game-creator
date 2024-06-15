@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StoreCharacterRequest;
 use App\Http\Requests\UpdateCharacterRequest;
 use App\Models\Type;
+use Illuminate\Support\Facades\Auth;
 
 class CharacterController extends Controller
 {
@@ -73,10 +74,15 @@ class CharacterController extends Controller
      * Show the form for editing the specified resource.
      */
     public function edit(Character $character)
-    {
+    {   
+        if($character->user_id === Auth::id())
+        {
         $types = Type::orderBy('name')->get();   
         $weapons = Weapon::orderBy('name', 'asc')->get();
         return view('admin.characters.edit', compact('character', 'weapons','types'));
+        }else{
+            return to_route('admin.dashboard');
+        }
     }
 
     /**
