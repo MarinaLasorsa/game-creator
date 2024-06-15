@@ -8,6 +8,7 @@ use App\Models\Weapon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Type;
+use App\Models\User;
 
 class CharacterSeeder extends Seeder
 {
@@ -20,9 +21,10 @@ class CharacterSeeder extends Seeder
 
             $weapons_ids = Weapon::all()->pluck('id')->all();
             $types_ids= Type::all()->pluck('id')->all();
+            $user_ids= User::all()->pluck('id')->all();
 
 
-        for($i = 0; $i < 10; $i++){
+        for($i = 0; $i < 20; $i++){
             $new_character = new Character();
             
             $new_character->name = $faker->name();
@@ -32,6 +34,7 @@ class CharacterSeeder extends Seeder
             $new_character->speed = $faker->randomNumber(3);
             $new_character->life = $faker->randomNumber(3);
             $new_character->type_id = $faker->randomElement($types_ids);
+            $new_character->user_id = $faker->randomElement($user_ids);
 
             $new_character->save();
 
