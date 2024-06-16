@@ -1,3 +1,29 @@
+# TO DO LIST
+
+## IMPORTANTE
+
+- Relazione ONE to MANY tra characters e users, in modo che utente può modificare solo i suoi personaggi
+
+- In welcome view, inserire contenuto:
+    - hero section animata (Anto) 
+    - sezione descrizione gioco
+    - sezione cards con descrizioni classi di gioco
+    - bottone per registrarsi ("Sei pronto a giocare?") -> scompare quando utente è loggato
+- In DASHBOARD inserire contenuto:
+    - Vedere i tuoi personaggi
+    - Creare un personaggio
+    - Editare un personaggio
+    - Cancellare un personaggio
+- 
+
+
+## BONUS
+- CRUD di weapons (solo la show)
+- Grafica generale
+
+
+
+
 # Dopo aver clonato lanciare
 - npm i
 - composer install

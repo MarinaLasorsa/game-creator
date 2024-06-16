@@ -22,5 +22,17 @@
             </div>
         </div>
     </div>
+    <div class="col">
+        <div class="card my-3">
+            <div class="card-header">
+              I Miei Personaggi
+            </div>
+            <ul class="list-group list-group-flush">
+                @foreach ($userCharacters as $userCharacter)
+              <li class="list-group-item"><a href="{{route('admin.characters.show', $userCharacter)}}" class="btn-link">{{$userCharacter->name}}</a></li>
+               @endforeach
+            </ul>
+        </div>
+    </div>
 </div>
 @endsection
