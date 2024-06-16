@@ -89,3 +89,27 @@
 
   .perg-bg {}
 }
+
+.btn-ms {
+  position: relative;
+  background-color: transparent;
+  border: 0;
+  padding: 12px 25px;
+  color: #600D0D;
+  img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 1;
+  }
+  &:hover{
+    cursor:url('../img/utility/pointer.svg'), auto;
+    img{
+      filter: invert(50%) ;
+    }
+    color: #fff;
+  }
+}

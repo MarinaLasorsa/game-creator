@@ -44,12 +44,13 @@
                         </label>
                     </div>
 
-                    <button type="submit" class="btn btn-primary mt-2">
-                        {{ __('Login') }}
+                    <button type="submit" class="btn-ms mt-2">
+                        <img src="{{ Vite::asset('resources/img/utility/btn-1.svg') }}" alt="">
+                        Login
                     </button>
                     <br>
                     @if (Route::has('password.request'))
-                        <a class="btn btn-link p-0" href="{{ route('password.request') }}">
+                        <a class="btn btn-link text-dark p-0" href="{{ route('password.request') }}">
                             {{ __('Forgot Your Password?') }}
                         </a>
                     @endif
