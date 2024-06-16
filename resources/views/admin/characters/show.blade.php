@@ -45,22 +45,19 @@
                                 </li>
                             @endforeach
 
-                            </ul>
+                        </ul>
                         </p>
                         @auth
-                            
-                        
-                        @if ($character->user_id === Auth::id())
-                            
-                        
-                            
-                            <div id="form" class="d-flex justify-content-center align-items-center gap-4">
-                                <button class="btn btn-outline-danger" id="trash">Trash</button>
-                                <a class="btn btn-outline-warning"
-                                 href="{{ route('admin.characters.edit', $character) }}">Edit
-                                </a>
-                            </div>
-                        @endif
+
+
+                            @if ($character->user_id === Auth::id())
+                                <div id="form" class="d-flex justify-content-center align-items-center gap-4">
+                                    <button class="btn btn-outline-danger" id="trash">Trash</button>
+                                    <a class="btn btn-outline-warning"
+                                        href="{{ route('admin.characters.edit', $character) }}">Edit
+                                    </a>
+                                </div>
+                            @endif
                         @endauth
                     </div>
                     <script>
@@ -98,4 +95,5 @@
             </div>
         </div>
     </div>
+
 @endsection
