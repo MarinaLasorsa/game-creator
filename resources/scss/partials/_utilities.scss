@@ -1,0 +1,15 @@
+.bg-black {
+    background-color: #181818;
+}
+
+.text-orange {
+    color: #FFBD59;
+}
+
+.link-orange {
+    color: white;
+
+    &:hover {
+        color: #FFBD59;
+    }
+}

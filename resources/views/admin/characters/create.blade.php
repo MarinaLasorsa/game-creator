@@ -7,8 +7,8 @@
     <main>
         <section class="py-5">
             
-            <div class="container">
-                <h2 class="text-center mb-4">Create a new Character!</h2>
+            <div class="container text-white">
+                <h2 class="text-center mb-4 text-orange">Crea un nuovo personaggio!</h2>
 
                 <form action="{{ route('admin.characters.store') }}" method="POST">
 
@@ -41,7 +41,7 @@
                     </div>
 
                      <div class="mb-3">
-                        <label for="type_id" class="form-label">Titolo</label>
+                        <label for="type_id" class="form-label">Classe</label>
                         <select class="form-control" name="type_id" id="type_id">
                           <option value="">-- Seleziona Classe --</option>
                           @foreach($types as $type) 
@@ -68,18 +68,23 @@
                     <div class="mb-3">
                         <label for="life" class="form-label">Vita</label>
                         <input type="number" min="0" max="999" step="1" name="life" class="form-control" id="life"
-                            placeholder="inserisci il valore della vità" value="{{old('life')}}">
+                            placeholder="inserisci il valore della vita" value="{{old('life')}}">
                     </div>
 
-                    <div class="mb-3 d-flex flex-wrap gap-2">
-                        @foreach ($weapons as $weapon)
-                        <div class="form-group">
-                            <input class="form-check-input" @checked(in_array($weapon->id, old('weapons',[]))) type="checkbox" id="weapons-{{$weapon->id}}" name="weapons[]" value="{{$weapon->id}}">
-                            <label class="form-check-label " for="weapons-{{$weapon->id}}"> -> {{$weapon->name}}</label>
-
+                    <div class="my-3">
+                        <div class="form-label">Armi</div>
+                        <div class="d-flex flex-wrap gap-3">
+                            @foreach ($weapons as $weapon)
+                            <div class="form-group">
+                                <input class="form-check-input" @checked(in_array($weapon->id, old('weapons',[]))) type="checkbox" id="weapons-{{$weapon->id}}" name="weapons[]" value="{{$weapon->id}}">
+                                <label class="form-check-label " for="weapons-{{$weapon->id}}"> {{$weapon->name}}</label>
+    
+                            </div>
+                            @endforeach
                         </div>
-                        @endforeach
                     </div>
+                    
+                    
 
 
                     <div class="mb-3">

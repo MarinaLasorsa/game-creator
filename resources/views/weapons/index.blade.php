@@ -4,15 +4,15 @@
 
 @section('content')
 <div class="container py-5">
-  <h1 class="text-center text-primary p-3">Weapons Table</h1>
+  <h1 class="text-center text-orange p-3">Armi</h1>
 <table class="table table-dark table-hover ">
   <thead>
     <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Category</th>
-      <th scope="col">Cost</th>
-      <th scope="col">Weight</th>
-      <th scope="col">Damage_dice</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Categoria</th>
+      <th scope="col">Costo</th>
+      <th scope="col">Peso</th>
+      <th scope="col">Danni</th>
       
     </tr>
 
@@ -21,7 +21,7 @@
   <tbody>
   @foreach ($weapons as $weapon )
   <tr>
-      <th scope="row"><a href="{{route('admin.weapons.show', $weapon)}}">{{$weapon->name}}</a></th>
+      <th scope="row"><a class="link-orange" href="{{route('admin.weapons.show', $weapon)}}">{{$weapon->name}}</a></th>
       <td>{{$weapon->category}}</td>
       <td>{{$weapon->cost}}</td>
       <td>{{$weapon->weight}}</td>

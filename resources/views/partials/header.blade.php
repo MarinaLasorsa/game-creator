@@ -8,7 +8,7 @@
             </div>
         </nav>--}}
 
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-dark shadow-sm">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
                     <div class="logo_laravel">
@@ -25,10 +25,10 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item d-flex">
-                            <a class="nav-link" href="{{url('/') }}">{{ __('Home') }}</a>
-                            <a class="nav-link text-warning" href="{{route('admin.characters.index')}}">Characters</a>
-                            <a class="nav-link text-primary"  href="{{route('admin.weapons.index')}}">Weapons</a>
-                            <a class="nav-link text-success" href="{{route('admin.characters.create')}}">Create New Characters</a>
+                            {{--<a class="nav-link" href="{{url('/') }}">{{ __('Home') }}</a>--}}
+                            <a class="nav-header-link" href="{{route('admin.characters.index')}}">Personaggi</a>
+                            <a class="nav-header-link"  href="{{route('admin.weapons.index')}}">Armi</a>
+                            <a class="nav-header-link" href="{{route('admin.characters.create')}}">Crea un personaggio</a>
                         </li>
                     </ul>
 
@@ -46,7 +46,7 @@
                         @endif
                         @else
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a id="navbarDropdown" class="nav-header-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
 

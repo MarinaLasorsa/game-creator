@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="container">
-    <h2 class="fs-4 text-secondary my-4">
+    <h2 class=" text-orange my-4">
         {{ __('Dashboard') }}
     </h2>
-    <div class="row justify-content-center">
+    {{--<div class="row justify-content-center">
         <div class="col">
             <div class="card">
                 <div class="card-header">{{ __('User Dashboard') }}</div>
@@ -21,17 +21,25 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>--}}
     <div class="col">
-        <div class="card my-3">
-            <div class="card-header">
-              I Miei Personaggi
-            </div>
-            <ul class="list-group list-group-flush">
-                @foreach ($userCharacters as $userCharacter)
-              <li class="list-group-item"><a href="{{route('admin.characters.show', $userCharacter)}}" class="btn-link">{{$userCharacter->name}}</a></li>
-               @endforeach
-            </ul>
+        <div class="table-responsive card bg-dark">
+            <table class="table table-dark table-hover">
+                <thead>
+                    <tr>
+                        <th><h5 class="text-orange">I Miei Personaggi</h5></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($userCharacters as $userCharacter)
+                    <tr>
+                        <td><a class="link-orange" href="{{route('admin.characters.show', $userCharacter)}}">{{$userCharacter->name}}</a></td>
+                        <td><a class="link-orange" href="{{route('admin.characters.edit', $userCharacter)}}">Modifica</a>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

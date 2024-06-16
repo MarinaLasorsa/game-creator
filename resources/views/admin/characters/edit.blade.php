@@ -7,7 +7,7 @@
     <main>
         <section class="py-4">
 
-            <div class="container">
+            <div class="container text-white">
                 <form action="{{ route('admin.characters.update', $character) }}" method="POST">
 
                     {{-- Cross Site Request Forgering --}}
@@ -33,9 +33,9 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="type_id" class="form-label">Titolo</label>
+                        <label for="type_id" class="form-label">Classe</label>
                         <select class="form-control" name="type_id" id="type_id">
-                            <option value="">-- Seleziona Categoria --</option>
+                            <option value="">-- Seleziona Classe --</option>
                             @foreach ($types as $type)
                                 <option @selected($type->id == old('type_id', $character->type_id)) value="{{ $type->id }}"> {{ $type->name }}
                                 </option>

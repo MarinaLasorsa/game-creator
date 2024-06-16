@@ -96,7 +96,8 @@
   border: 0;
   padding: 12px 25px;
   color: #600D0D;
-  img{
+
+  img {
     position: absolute;
     top: 0;
     left: 0;
@@ -105,11 +106,33 @@
     object-fit: contain;
     z-index: 1;
   }
-  &:hover{
-    cursor:url('../img/utility/pointer.svg'), auto;
-    img{
-      filter: invert(50%) ;
+
+  &:hover {
+    cursor: url('../img/utility/pointer.svg'), auto;
+
+    img {
+      filter: invert(50%);
     }
+
     color: #fff;
+  }
+}
+
+.nav-header-link {
+  color: white;
+  font-family: "EB Garamond", serif;
+  font-size: 20px;
+  margin: 0 20px;
+
+  &:hover {
+    color: #FFBD59;
+  }
+}
+
+.link-orange {
+  color: white;
+
+  &:hover {
+    color: #FFBD59;
   }
 }

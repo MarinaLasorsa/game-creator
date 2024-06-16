@@ -4,16 +4,16 @@
 
 @section('content')
 <div class="container py-5">
-  <h1 class="text-center text-warning p-3">Characters Table</h1>
+  <h1 class="text-center text-orange p-3">Personaggi</h1>
 <table class="table table-dark table-hover ">
   <thead>
     <tr>
-      <th scope="col">Name</th>
-      <th scope="col">description</th>
-      <th scope="col">attack</th>
-      <th scope="col">defence</th>
-      <th scope="col">speed</th>
-      <th scope="col">life</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Descrizione</th>
+      <th scope="col">Attacco</th>
+      <th scope="col">Difesa</th>
+      <th scope="col">Velocità</th>
+      <th scope="col">Vita</th>
       
 
       
@@ -22,7 +22,7 @@
   <tbody>
   @foreach ($characters as $character )
   <tr>
-      <th scope="row"><a href="{{route('admin.characters.show', $character)}}">{{$character->name}}</a></th>
+      <th scope="row"><a class="link-orange" href="{{route('admin.characters.show', $character)}}">{{$character->name}}</a></th>
       <td>{{$character->description}}</td>
       <td>{{$character->attack}}</td>
       <td>{{$character->defence}}</td>
