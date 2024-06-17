@@ -7,7 +7,7 @@
                 </a>
             </div>
             <div class="col-auto">
-                @if ('login')
+                @if (Route::currentRouteName() !== 'login')
                     <a class="btn btn-dark bg-transparent border-0" href="{{ route('login') }}">
                         <img src="{{ Vite::asset('resources/img/utility/user.svg') }}" alt="">
                         <br>
