@@ -21,6 +21,8 @@
                         <p class="card-text"><span class="fw-bold">Attacco: </span> {{ $weapon->damage_dice }}</p>
                         
                        
+                        
+                       
                     </div>
              
 
