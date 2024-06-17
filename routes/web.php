@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\CharacterController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\TypeController;
 use App\Http\Controllers\WeaponPageController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Type;
@@ -32,6 +33,8 @@ Route::middleware(['auth', 'verified'])
   Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
   //  Route::resource('weapons', WeaponPageController::class);
+
+  Route::resource('types', TypeController::class);
 
   Route::resource('weapons', WeaponPageController::class);
 
