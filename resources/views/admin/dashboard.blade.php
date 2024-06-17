@@ -10,24 +10,20 @@
         </h2>
         <h3 class="ms-3"><span class="badge bg-orange text-black"><a href="{{route('admin.characters.create')}}"><i class="fa-solid fa-plus"></i></a></span></h3>
     </div>
-    
-    {{--<div class="row justify-content-center">
-        <div class="col">
-            <div class="card">
-                <div class="card-header">{{ __('User Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
+    <div class="row">
+        @foreach ($userCharacters as $userCharacter)
+        <div class="col-4">
+            <div class="card position-relative text-bg-dark">
+                <img src="{{ Vite::asset('resources/img/players/1.png') }}" class="card-img">
+                <div class="hover-text card-hover">
+                  <h5 class="card-title">{{$userCharacter->name}}</h5>
                 </div>
             </div>
         </div>
-    </div>--}}
+        @endforeach
+    </div>
+    
+    
     <div class="col">
         <div class="table-responsive card bg-dark">
             <table class="table table-dark table-hover">
