@@ -9,19 +9,19 @@
   <div class="row">
     @foreach ($weapons as $weapon)
     <div class="col-4 py-3">
-      <div class="card bg-dark text-light border-danger" style="width: 18rem;">
-      <img src="" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">
+      <a href="{{route('admin.weapons.show', $weapon)}}" class="card text-light border-danger custom-card" style="width: 18rem;">
+      <img src="{{ Vite::asset($weapon->image) }}" class="card-img-top" alt="...">
+      <div  class="card-body ">
+        <h5 class="card-title text-center">
         {{$weapon->name}}
         </h5>
-        <p class="card-text">Categoria :{{$weapon->category}}</p>
+        <!-- <p class="card-text">Categoria :{{$weapon->category}}</p>
         <p class="card-text">Costo: {{$weapon->cost}}</p>
         <p class="card-text">Peso: {{$weapon->weight}}</p>
         <p class="card-text"> Danno : {{$weapon->damage_dice}}</p>
-        <a href="{{route('admin.weapons.show', $weapon)}}" class="btn btn-outline-warning">Dettagli arma</a>
+        <a href="{{route('admin.weapons.show', $weapon)}}" class="btn btn-outline-warning">Dettagli arma</a> -->
       </div>
-      </div>
+      </a>
 
     </div>
 
@@ -57,3 +57,4 @@
  
   
 </table> -->
+
