@@ -29,6 +29,7 @@
                             <a class="nav-header-link" href="{{ url('admin') }}">{{__('Dashboard')}}</a>
                             <a class="nav-header-link" href="{{route('admin.characters.index')}}">Personaggi</a>
                             <a class="nav-header-link"  href="{{route('admin.weapons.index')}}">Armi</a>
+                            <a class="nav-header-link"  href="{{route('types.index')}}">Ruoli</a>
                         </li>
                     </ul>
 

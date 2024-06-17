@@ -51,9 +51,9 @@
 
                         @foreach ($types as $type)
                             <div @class(['carousel-item', 'active' => $loop->first])>
-                               <a href="{{route('admin.types.show',$type)}}"> <img src="{{ Vite::asset($type->img_carosel) }}" class="d-block w-100" alt="..."> </a>
+                               <a href="{{route('types.index')}}"> <img src="{{ Vite::asset($type->img_carosel) }}" class="d-block w-100" alt="..."> </a>
                                 <div class="carousel-caption d-none d-md-block">
-                                    <h5>{{ $type->name }}</h5>
+                                    <a href="{{route('types.show',$type)}}"><h5>{{ $type->name }}</h5></a>
                                     <p>{{ strstr($type->description, '.', true) }}.</p>
                                 </div>
                             </div>

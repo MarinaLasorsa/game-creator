@@ -34,12 +34,14 @@ Route::middleware(['auth', 'verified'])
 
   //  Route::resource('weapons', WeaponPageController::class);
 
-  Route::resource('types', TypeController::class);
+ 
 
   Route::resource('weapons', WeaponPageController::class);
 
   Route::resource('characters', CharacterController::class);
 });
+
+Route::resource('types', TypeController::class);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
