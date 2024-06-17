@@ -1,9 +1,17 @@
 .bg-black {
-    background-color: #181818;
+    background-color: #1f1616;
+}
+
+.bg-orange {
+    background-color: #FFBD59;
 }
 
 .text-orange {
     color: #FFBD59;
+}
+
+.text-dark-red {
+    color: #811c1c;
 }
 
 .link-orange {
@@ -17,4 +25,8 @@
 .bg-half-dark {
     background: rgb(20, 19, 19);
     background: linear-gradient(0deg, rgba(20, 19, 19, 0.95) 50%, rgba(47, 43, 43, 0) 80%);
+}
+
+.text-eb-garamond {
+    font-family: "EB Garamond", serif;
 }

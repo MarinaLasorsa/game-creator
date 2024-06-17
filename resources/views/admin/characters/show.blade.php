@@ -3,8 +3,8 @@
 @section('title', $character->name)
 
 @section('content')
-    <img class="bg-video" src="{{ Vite::asset('resources/img/bg/bg-1.png') }}" alt="">
-    <div class="container py-5">
+<img class="bg-video" src="{{ Vite::asset('resources/img/bg/bg-1.png') }}" alt="">
+    <div class="container py-5 text-eb-garamond">
         <div class="row">
             <div class="col-12 ">
                 <div class="card text-bg-dark">
@@ -64,9 +64,9 @@
                         @auth
                             @if ($character->user_id === Auth::id())
                                 <div id="form" class="d-flex justify-content-center align-items-center gap-4">
-                                    <button class="btn btn-outline-danger" id="trash">Trash</button>
+                                    <button class="btn btn-outline-danger" id="trash">Elimina</button>
                                     <a class="btn btn-outline-warning"
-                                        href="{{ route('admin.characters.edit', $character) }}">Edit
+                                        href="{{ route('admin.characters.edit', $character) }}">Modifica
                                     </a>
                                 </div>
                             @endif

@@ -1,4 +1,3 @@
-
 * {
     padding: 0;
     margin: 0;
@@ -7,20 +6,22 @@
 
 a {
     text-decoration: none;
-    cursor:url('../img/utility/pointer.svg'), auto;
+    cursor: url('../img/utility/pointer.svg'), auto;
+    color: currentColor;
 }
+
 .btn,
-button{
-    cursor:url('../img/utility/pointer.svg'), auto;
+button {
+    cursor: url('../img/utility/pointer.svg'), auto;
 }
 
 img {
     max-width: 100%;
 }
 
-ul,ol,
+ul,
+ol,
 menu {
     list-style-type: none;
 
 }
-
