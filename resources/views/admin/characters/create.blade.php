@@ -3,10 +3,10 @@
 @section('title', 'Create')
 
 @section('content')
-<img class="bg-video" src="{{ Vite::asset('resources/img/bg/bg-1.png') }}" alt="">
+    <img class="bg-video" src="{{ Vite::asset('resources/img/bg/bg-1.png') }}" alt="">
     <main>
         <section class="py-5">
-            
+
             <div class="container text-white">
                 <h2 class="text-center mb-4 text-orange">Crea un nuovo personaggio!</h2>
 
@@ -27,7 +27,7 @@
                         <label for="attack" class="form-label">Attacco</label>
                         <input type="number" min="0" max="999" step="1" name="attack"
                             class="form-control" id="attack" placeholder="inserisci il valore di attacco"
-                            value="{{ old('attack') }}">
+                            value="{{ old('attack', '1') }}">
                     </div>
 
                     <div class="mb-3">
@@ -43,7 +43,7 @@
                         </select>
                     </div>
 
-                     <div class="mb-3">
+                    <div class="mb-3">
                         <label for="type_id" class="form-label">Classe</label>
                         <select class="form-control" name="type_id" id="type_id">
                             <option value="">-- Seleziona Classe --</option>
@@ -61,36 +61,47 @@
                         <label for="defence" class="form-label">Difesa</label>
                         <input type="number" min="0" max="999" step="1" name="defence"
                             class="form-control" id="defence" placeholder="inserisci il valore di difesa"
-                            value="{{ old('defence') }}">
+                            value="{{ old('defence', '1') }}">
                     </div>
 
                     <div class="mb-3">
                         <label for="speed" class="form-label">Velocità</label>
                         <input type="number" min="0" max="999" step="1" name="speed"
                             class="form-control" id="speed" placeholder="inserisci il valore di velocità"
-                            value="{{ old('speed') }}">
+                            value="{{ old('speed', '1') }}">
                     </div>
 
                     <div class="mb-3">
                         <label for="life" class="form-label">Vita</label>
-                        <input type="number" min="0" max="999" step="1" name="life" class="form-control" id="life"
-                            placeholder="inserisci il valore della vita" value="{{old('life')}}">
+                        <input type="number" min="0" max="999" step="1" name="life"
+                            class="form-control" id="life" placeholder="inserisci il valore della vita"
+                            value="{{ old('life', '1') }}">
                     </div>
 
                     <div class="my-3">
                         <div class="form-label">Armi</div>
                         <div class="d-flex flex-wrap gap-3">
                             @foreach ($weapons as $weapon)
-                            <div class="form-group">
-                                <input class="form-check-input" @checked(in_array($weapon->id, old('weapons',[]))) type="checkbox" id="weapons-{{$weapon->id}}" name="weapons[]" value="{{$weapon->id}}">
-                                <label class="form-check-label " for="weapons-{{$weapon->id}}"> {{$weapon->name}}</label>
-    
-                            </div>
+                                @php
+                                    $arr_weapons = old('weapons', null);
+                                    $value_weapon = '';
+                                    // if ($arr_weapons != null) {
+                                    //     $value_weapon = $arr_weapons[$loop->index];
+                                    // } else {
+                                    //     $value_weapon = '0';
+                                    // }
+                                @endphp
+                                <div class="input-group mb-3">
+                                    <label class="input-group-text"
+                                        for="weapons-{{ $weapon->id }}">{{ $weapon->name }}</label>
+                                    <input type="number" class="form-control" name="weapons[]"
+                                        id="weapons-{{ $weapon->id }}" value="{{$arr_weapons != null ? $arr_weapons[$loop->index] : '0'}}">
+                                </div>
                             @endforeach
                         </div>
                     </div>
-                    
-                    
+
+
 
 
                     <div class="mb-3">

@@ -38,34 +38,23 @@ class CharacterController extends Controller
      */
     public function store(StoreCharacterRequest $request)
     {
-        /*$request->validate([
-            'name'=> 'required|max:200|min:2',
-            'description'=>'required|max:1000',
-            'attack'=> 'required|integer',
-            'defence'=> 'required|integer',
-            'speed'=> 'required|integer',
-            'life'=> 'required|integer',
-
-        ]);*/
-        // dd($request);
+        dd($request->weapons);
         $form_data = $request->validated();
 
         $form_data = $request->all();
 
         $form_data['user_id'] = Auth::id();
-        // dump(Auth::id());
-        // dump()
         $new_character = Character::create($form_data);
 
-        if ($request->has('weapons')) {
-            $weapons_with_qty = [];
-            foreach ($request->weapons as $weapon_id => $quantity) {
-                if ($quantity > 0) {
-                    $weapons_with_qty[$weapon_id] = ['quantity' => $quantity];
-                }
+
+        $weapons_with_qty = [];
+        foreach ($request->weapons as $weapon_id => $quantity) {
+            if ($quantity > 0) {
+                $weapons_with_qty[$weapon_id] = ['quantity' => $quantity];
             }
-            $new_character->weapons()->attach($weapons_with_qty);
         }
+        $new_character->weapons()->attach($weapons_with_qty);
+
 
         return to_route('admin.characters.show', $new_character);
     }
@@ -83,13 +72,12 @@ class CharacterController extends Controller
      * Show the form for editing the specified resource.
      */
     public function edit(Character $character)
-    {   
-        if($character->user_id === Auth::id())
-        {
-        $types = Type::orderBy('name')->get();   
-        $weapons = Weapon::orderBy('name', 'asc')->get();
-        return view('admin.characters.edit', compact('character', 'weapons','types'));
-        }else{
+    {
+        if ($character->user_id === Auth::id()) {
+            $types = Type::orderBy('name')->get();
+            $weapons = Weapon::orderBy('name', 'asc')->get();
+            return view('admin.characters.edit', compact('character', 'weapons', 'types'));
+        } else {
             return to_route('admin.dashboard');
         }
     }
@@ -116,7 +104,7 @@ class CharacterController extends Controller
 
         //oppure - fa subito il fill()e il salvataggio- save()
         //$character->update();
-       
+
         if ($request->has('weapons')) {
             $weapons_with_qty = [];
             foreach ($request->weapons as $weapon_id => $quantity) {

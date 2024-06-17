@@ -74,16 +74,28 @@
                             class="form-control" id="life" placeholder="inserisci il valore della vità"
                             value="{{ old('life', $character->life) }}">
                     </div>
-                    <div class="mb-3 d-flex flex-wrap gap-2">
-                        @foreach ($weapons as $weapon)
-                            <div class="form-group">
-                                <input class="form-check-input" @checked(in_array($weapon->id, old('weapons', $character->weapons->pluck('id')->all()))) type="checkbox"
-                                    id="weapons-{{ $weapon->id }}" name="weapons[]" value="{{ $weapon->id }}">
-                                <label class="form-check-label " for="weapons-{{ $weapon->id }}"> ->
-                                    {{ $weapon->name }}</label>
 
-                            </div>
-                        @endforeach
+                    <div class="my-3">
+                        <div class="form-label">Armi</div>
+                        <div class="d-flex flex-wrap gap-3">
+                            @foreach ($character->weapons as $weapon)
+                                @php
+                                    $arr_weapons = old('weapons', null);
+                                    $value_weapon = '';
+                                    if ($arr_weapons != null) {
+                                        $value_weapon = $arr_weapons[$loop->index];
+                                    } else {
+                                        $value_weapon = $weapon->pivot->quantity;
+                                    } 
+                                @endphp
+                                <div class="input-group mb-3">
+                                    <label class="input-group-text"
+                                        for="weapons-{{ $weapon->id }}">{{ $weapon->name }}</label>
+                                    <input type="number" class="form-control" name="weapons[]"
+                                        id="weapons-{{ $weapon->id }}" value="{{$value_weapon}}">
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
 
                     <div class="mb-3">
