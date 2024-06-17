@@ -8,9 +8,9 @@
             </div>
             <div class="col-auto">
                 <a class="btn btn-dark bg-transparent border-0" href="{{ route('login') }}">
-                    <span class="material-symbols-rounded">
-                        person
-                    </span>
+                    <img src="{{ Vite::asset('resources/img/utility/user.svg') }}" alt="">
+                    <br>
+                    login
                 </a>
             </div>
         </nav>
