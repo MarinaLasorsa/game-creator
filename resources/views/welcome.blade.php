@@ -4,9 +4,9 @@
         alt="video bg"></video>
     <div class="box-video">
         <h1 class="text-hero">WARRIOR</h1>
-        @if (Route::has('register'))
+        @guest
             <a class="fs-1 btn-rady-to-play" href="{{ route('register') }}">READY TO PLAY</a>
-        @endif
+        @endguest
         <img class="arrow-down" src="{{ Vite::asset('resources/img/utility/arrow-down.gif') }}" alt="">
     </div>
     <div class="container">
@@ -42,7 +42,8 @@
                                     class="active" aria-current="true" aria-label="Slide 1"></button>
                             @else
                                 <button type="button" data-bs-target="#carouselExampleAutoplaying"
-                                    data-bs-slide-to="{{$loop->index}}" aria-label="{{'Slide '.($loop->index+1)}}"></button>
+                                    data-bs-slide-to="{{ $loop->index }}"
+                                    aria-label="{{ 'Slide ' . ($loop->index + 1) }}"></button>
                             @endif
                         @endforeach
                     </div>
@@ -53,7 +54,7 @@
                                 <img src="{{ Vite::asset($type->img_carosel) }}" class="d-block w-100" alt="...">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>{{ $type->name }}</h5>
-                                    <p>{{ strstr($type->description,'.',true) }}.</p>
+                                    <p>{{ strstr($type->description, '.', true) }}.</p>
                                 </div>
                             </div>
                         @endforeach
