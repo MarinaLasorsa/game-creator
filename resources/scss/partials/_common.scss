@@ -141,7 +141,7 @@
   opacity: 0.75;
   background-color: black;
   transition: ease-in-out, 1s;
-  
+
   &:hover {
     opacity: 1;
     background: rgb(2, 5, 27) !important;
@@ -174,4 +174,24 @@
 .card:hover .card-hover {
   opacity: 1;
   transition: ease-in-out, 0.2s;
+}
+
+.card-character-show {
+  position: relative;
+  color: #fff;
+
+  .card-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .card-img-overlay {
+    position: relative;
+    padding: 24px;
+  }
 }

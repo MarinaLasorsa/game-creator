@@ -7,14 +7,14 @@
     <div class="container py-5 text-eb-garamond">
         <div class="row">
             <div class="col-12 ">
-                <div class="card text-bg-dark">
+                <div class="card-character-show">
                     @if ($character->genre === 'male')
                         <img src="{{ Vite::asset($character->type->img_m) }}" class="card-img" alt="...">
                     @else
                         <img src="{{ Vite::asset($character->type->img_f) }}" class="card-img" alt="...">
                     @endif
                     <div class="card-img-overlay bg-half-dark">
-                        <div class="h-50"></div>
+                        <div style="height:250px"></div>
                         <h1 class="card-title text-center text-orange p-3">{{ $character->name }}</h1>
                         <p class="card-text"><span class="fw-bold">Descrizione: </span>{{ $character->description }}</p>
                         <p class="card-text"><span class="fw-bold"><img
@@ -34,8 +34,8 @@
                                     src="{{ Vite::asset('resources/img/utility/type.svg') }}" width="20">
                             </span>{{ $character->type->name }}</p>
 
-                        <div class="border border-light rounded p-4 position-relative mx-5">
-                            <img class="position-absolute top-0 start-100 translate-middle" src="{{ Vite::asset('resources/img/utility/box.svg') }}" width="40">
+                        <div class="border border-light rounded p-4 position-relative mx-5 mb-3 mt-5">
+                            <img class="position-absolute top-0 start-0 translate-middle" src="{{ Vite::asset('resources/img/utility/box.svg') }}" width="40">
                             <ul class="d-flex flex-wrap align-items-center gap-3 p-0 mb-0">
 
                                 @foreach ($character->weapons as $current_weapon)
