@@ -1,12 +1,6 @@
 <header>
     <section>
-        {{--<nav class="container ">
-            <div class="d-flex justify-content-start align-items-center gap-5">
-                <a class="text-warning" href="{{route('characters.index')}}">CHARACTERS</a>
-                <a class="text-primary"  href="{{route('index')}}">WEAPONS</a>
-                <a class="text-success" href="{{route('characters.create')}}">CREATE NEW CHARACTERS</a>
-            </div>
-        </nav>--}}
+        
 
         <nav class="navbar navbar-expand-md navbar-light bg-dark bg-opacity-75 shadow-sm">
             <div class="container">
@@ -52,7 +46,6 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ url('admin') }}">{{__('Dashboard')}}</a>
                                 <a class="dropdown-item" href="{{ url('profile') }}">{{__('Profile')}}</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
