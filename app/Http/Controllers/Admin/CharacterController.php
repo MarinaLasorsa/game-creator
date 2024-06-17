@@ -52,6 +52,9 @@ class CharacterController extends Controller
 
         $form_data = $request->all();
 
+        $form_data['user_id'] = Auth::id();
+        // dump(Auth::id());
+        // dump()
         $new_character = Character::create($form_data);
         if ($request->has('weapons')) {
 
