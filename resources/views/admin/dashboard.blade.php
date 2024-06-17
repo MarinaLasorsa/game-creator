@@ -36,8 +36,14 @@
                 <tbody>
                     @foreach ($userCharacters as $userCharacter)
                     <tr>
-                        <td><a class="link-orange" href="{{route('admin.characters.show', $userCharacter)}}">{{$userCharacter->name}}</a></td>
-                        <td><a class="link-orange" href="{{route('admin.characters.edit', $userCharacter)}}">Modifica</a>
+                        <td class="align-middle"><a class="link-orange" href="{{route('admin.characters.show', $userCharacter)}}">{{$userCharacter->name}}</a></td>
+                        <td class="d-flex justify-content-end">
+                            <a class="btn link-orange" href="{{route('admin.characters.edit', $userCharacter)}}">Modifica</a>
+                            <form action="{{route('admin.characters.destroy', $userCharacter)}}" method="POST">
+                            @method('DELETE')
+                            @csrf
+                            <button type="submit" class="btn link-orange" onclick="return confirm('Sei sicuro di voler eliminare questo personaggio?')">Elimina</button>
+                        </form></td>
                     </tr>
                     @endforeach
                 </tbody>
