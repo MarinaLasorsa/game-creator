@@ -21,6 +21,8 @@ class WeaponSeeder extends Seeder
             if ($index !== 0) {
                 $weapon = new Weapon();
                 $weapon->name = $row[0];
+                $weapon->slug = $row[1];
+                $weapon->image = 'resources/img/weapons/'. $index +1 . '.png';
                 $weapon->category = $row[3];
                 $weapon->weight = $row[4];
                 $weapon->cost = $row[5];
