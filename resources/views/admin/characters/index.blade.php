@@ -3,44 +3,33 @@
 @section('title', 'Characters')
 
 @section('content')
-<video class="bg-video" src="{{ Vite::asset('resources/img/video/bg-v-4.mp4') }}" autoplay muted loop playsinline
+    <video class="bg-video" src="{{ Vite::asset('resources/img/video/bg-v-4.mp4') }}" autoplay muted loop playsinline
         alt="video bg"></video>
-<div class="container py-5 text-eb-garamond">
-  <h1 class="text-center text-orange p-3">Personaggi</h1>
-  <div class="table-responsive card bg-dark">
-    <table class="table table-dark table-hover">
-      <thead>
-        <tr>
-          <th scope="col">Creato da</th>
-          <th scope="col">Nome</th>
-          <th scope="col">Descrizione</th>
-          <th scope="col">Attacco</th>
-          <th scope="col">Difesa</th>
-          <th scope="col">Velocità</th>
-          <th scope="col">Vita</th>
-          
-  
-          
-        </tr>
-      </thead>
-      <tbody>
-      @foreach ($characters as $character )
-      <tr>
-        <th>{{$character->user->name}}</th>  
-        <th scope="row"><a  class="link-orange"  href="{{route('admin.characters.show', $character)}}">{{$character->name}}</a></th>
-          <td>{{$character->description}}</td>
-          <td>{{$character->attack}}</td>
-          <td>{{$character->defence}}</td>
-          <td>{{$character->speed}}</td>
-          <td>{{$character->life}}</td>
-          
-          
-        </tr>
-      @endforeach
-      </tbody>
-    
-      
-    </table>
-  </div>
-</div>
+    <div class="container py-5 text-eb-garamond">
+        <h1 class="text-center text-orange p-3">Personaggi</h1>
+
+        @foreach ($characters as $character)
+
+            <a href="{{ route('admin.characters.show', $character) }}" class="card bg-transparent mb-3">
+                <div class="row g-0 bg-dark bg-opacity-75 text-white align-items-center">
+                    <div class="col-md-9">
+                        <div class="card-body">
+                            <h2 class="card-title mb-0">{{ $character->name }}</h2>
+                            <p class="card-text"><small class="text-secondary">{{ $character->user->name }}</small></p>
+                            <p class="card-text">{{ $character->description }}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        @if ($character->genre === 'male')
+                            <img src="{{ Vite::asset($character->type->img_m) }}" class="img-fluid rounded-end"
+                                alt="...">
+                        @else
+                            <img src="{{ Vite::asset($character->type->img_f) }}" class="img-fluid rounded-end"
+                                alt="...">
+                        @endif
+                    </div>
+                </div>
+            </a>
+        @endforeach
+    </div>
 @endsection
