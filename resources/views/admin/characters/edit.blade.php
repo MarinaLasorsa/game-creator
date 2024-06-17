@@ -5,7 +5,7 @@
 @if ($character->user_id === Auth::id())    
 
 @section('content')
-
+<img class="bg-video" src="{{ Vite::asset('resources/img/bg/bg-1.png') }}" alt="">
     <main>
         <section class="py-4">
 

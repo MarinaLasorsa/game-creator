@@ -7,11 +7,19 @@
                 </a>
             </div>
             <div class="col-auto">
-                <a class="btn btn-dark bg-transparent border-0" href="{{ route('login') }}">
-                    <img src="{{ Vite::asset('resources/img/utility/user.svg') }}" alt="">
-                    <br>
-                    login
-                </a>
+                @if ('login')
+                    <a class="btn btn-dark bg-transparent border-0" href="{{ route('login') }}">
+                        <img src="{{ Vite::asset('resources/img/utility/user.svg') }}" alt="">
+                        <br>
+                        login
+                    </a>
+                @else
+                    <a class="btn btn-dark bg-transparent border-0" href="{{ route('register') }}">
+                        <img src="{{ Vite::asset('resources/img/utility/user.svg') }}" alt="">
+                        <br>
+                        Register
+                    </a>
+                @endif
             </div>
         </nav>
     </div>

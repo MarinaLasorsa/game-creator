@@ -3,6 +3,8 @@
 @section('title', 'Characters')
 
 @section('content')
+<video class="bg-video" src="{{ Vite::asset('resources/img/video/bg-v-4.mp4') }}" autoplay muted loop playsinline
+        alt="video bg"></video>
 <div class="container py-5">
   <h1 class="text-center text-orange p-3">Personaggi</h1>
 <table class="table table-dark table-hover ">

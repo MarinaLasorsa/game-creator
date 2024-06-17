@@ -3,6 +3,7 @@
 @section('title', $character->name)
 
 @section('content')
+<img class="bg-video" src="{{ Vite::asset('resources/img/bg/bg-1.png') }}" alt="">
     <div class="container py-5">
         <div class="row">
             <div class="col-12 ">
