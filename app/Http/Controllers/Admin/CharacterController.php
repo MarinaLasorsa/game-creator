@@ -30,7 +30,7 @@ class CharacterController extends Controller
     {
         $types = Type::orderBy('name')->get();
         $weapons = Weapon::orderBy('name', 'asc')->get();
-        return view('admin.characters.create', compact('weapons','types'));
+        return view('admin.characters.create', compact('weapons', 'types'));
     }
 
     /**
@@ -47,7 +47,7 @@ class CharacterController extends Controller
             'life'=> 'required|integer',
 
         ]);*/
-       // dd($request);
+        // dd($request);
         $form_data = $request->validated();
 
         $form_data = $request->all();
@@ -56,9 +56,15 @@ class CharacterController extends Controller
         // dump(Auth::id());
         // dump()
         $new_character = Character::create($form_data);
-        if ($request->has('weapons')) {
 
-            $new_character->weapons()->attach($request->weapons);
+        if ($request->has('weapons')) {
+            $weapons_with_qty = [];
+            foreach ($request->weapons as $weapon_id => $quantity) {
+                if ($quantity > 0) {
+                    $weapons_with_qty[$weapon_id] = ['quantity' => $quantity];
+                }
+            }
+            $new_character->weapons()->attach($weapons_with_qty);
         }
 
         return to_route('admin.characters.show', $new_character);
@@ -110,10 +116,16 @@ class CharacterController extends Controller
 
         //oppure - fa subito il fill()e il salvataggio- save()
         //$character->update();
+       
         if ($request->has('weapons')) {
-
-            $character->weapons()->sync($request->weapons);
-        }else{
+            $weapons_with_qty = [];
+            foreach ($request->weapons as $weapon_id => $quantity) {
+                if ($quantity > 0) {
+                    $weapons_with_qty[$weapon_id] = ['quantity' => $quantity];
+                }
+            }
+            $character->weapons()->sync($weapons_with_qty);
+        } else {
             $character->weapons()->detach();
         }
 

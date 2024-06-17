@@ -17,52 +17,58 @@
 
                     <div class="mb-3">
                         <label for="name" class="form-label">Nome</label>
-                        <input type="text" name="name" class="form-control" id="name" placeholder="inserisci il nome" value="{{old('name')}}">
+                        <input type="text" name="name" class="form-control" id="name"
+                            placeholder="inserisci il nome" value="{{ old('name') }}">
                     </div>
 
 
 
                     <div class="mb-3">
                         <label for="attack" class="form-label">Attacco</label>
-                        <input type="number" min="0" max="999" step="1" name="attack" class="form-control" id="attack" placeholder="inserisci il valore di attacco" value="{{old('attack')}}">
+                        <input type="number" min="0" max="999" step="1" name="attack"
+                            class="form-control" id="attack" placeholder="inserisci il valore di attacco"
+                            value="{{ old('attack') }}">
                     </div>
 
                     <div class="mb-3">
                         <label for="genre" class="form-label">Genere</label>
                         <select class="form-control" name="genre" id="genre">
-    
+
                             <option value="">Seleziona Genere</option>
-                            
-                                <option @selected('male' == old('genre')) value="male">maschio</option>
-                                <option @selected('female' == old('genre')) value="female">femmina</option>
-                            
-    
+
+                            <option @selected('male' == old('genre')) value="male">maschio</option>
+                            <option @selected('female' == old('genre')) value="female">femmina</option>
+
+
                         </select>
                     </div>
 
                      <div class="mb-3">
                         <label for="type_id" class="form-label">Classe</label>
                         <select class="form-control" name="type_id" id="type_id">
-                          <option value="">-- Seleziona Classe --</option>
-                          @foreach($types as $type) 
-                            <option @selected( $type->id == old('type_id') ) value="{{ $type->id }}"> {{ $type->name }}</option>
-                          @endforeach
+                            <option value="">-- Seleziona Classe --</option>
+                            @foreach ($types as $type)
+                                <option @selected($type->id == old('type_id')) value="{{ $type->id }}"> {{ $type->name }}
+                                </option>
+                            @endforeach
                         </select>
-                      </div> 
-    
+                    </div>
+
 
 
 
                     <div class="mb-3">
                         <label for="defence" class="form-label">Difesa</label>
-                        <input type="number" min="0" max="999" step="1" name="defence" class="form-control" id="defence"
-                            placeholder="inserisci il valore di difesa" value="{{old('defence')}}">
+                        <input type="number" min="0" max="999" step="1" name="defence"
+                            class="form-control" id="defence" placeholder="inserisci il valore di difesa"
+                            value="{{ old('defence') }}">
                     </div>
 
                     <div class="mb-3">
                         <label for="speed" class="form-label">Velocità</label>
-                        <input type="number" min="0" max="999" step="1" name="speed" class="form-control" id="speed"
-                            placeholder="inserisci il valore di velocità" value="{{old('speed')}}">
+                        <input type="number" min="0" max="999" step="1" name="speed"
+                            class="form-control" id="speed" placeholder="inserisci il valore di velocità"
+                            value="{{ old('speed') }}">
                     </div>
 
                     <div class="mb-3">
@@ -89,7 +95,8 @@
 
                     <div class="mb-3">
                         <label for="description" class="form-label">Descrizione</label>
-                        <textarea class="form-control" name="description" id="description" rows="3" placeholder="Descrizione del personaggio" >{{old('description')}}</textarea>
+                        <textarea class="form-control" name="description" id="description" rows="3"
+                            placeholder="Descrizione del personaggio">{{ old('description') }}</textarea>
                     </div>
 
                     <button class="btn btn-primary">Crea</button>
@@ -97,12 +104,10 @@
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
-                            @foreach ($errors->all() as $error )
-
-                            <li>
-                                {{$error}}
-                            </li>
-                                
+                            @foreach ($errors->all() as $error)
+                                <li>
+                                    {{ $error }}
+                                </li>
                             @endforeach
                         </ul>
                     </div>
