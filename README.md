@@ -2,23 +2,27 @@
 
 ## IMPORTANTE
 
-- Relazione ONE to MANY tra characters e users, in modo che utente può modificare solo i suoi personaggi
 
-- In welcome view, inserire contenuto:
-    - hero section animata (Anto) 
-    - sezione descrizione gioco
-    - sezione cards con descrizioni classi di gioco
-    - bottone per registrarsi ("Sei pronto a giocare?") -> scompare quando utente è loggato
+
+
+   
+- Aggiungere crud (solo index e show ) di type
+
+- sistemare header
+- sistemare vista create a livello grafico
+- creare una pagina 404
+    
+    
 - In DASHBOARD inserire contenuto:
-    - Vedere i tuoi personaggi
+    
     - Creare un personaggio
-    - Editare un personaggio
+    
     - Cancellare un personaggio
 - 
 
 
 ## BONUS
-- CRUD di weapons (solo la show)
+
 - Grafica generale
 
 
