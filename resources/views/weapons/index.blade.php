@@ -9,7 +9,7 @@
   <div class="row">
     @foreach ($weapons as $weapon)
     <div class="col-4 py-3">
-      <a href="{{route('admin.weapons.show', $weapon)}}" class="card text-light border-danger custom-card" style="width: 18rem;">
+      <a href="{{route('admin.weapons.show', $weapon)}}" class="card text-light custom-card" style="width: 18rem;">
       <img src="{{ Vite::asset($weapon->image) }}" class="card-img-top" alt="...">
       <div  class="card-body ">
         <h5 class="card-title text-center">
