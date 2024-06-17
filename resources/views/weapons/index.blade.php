@@ -3,6 +3,7 @@
 @section('title', 'Weapons')
 
 @section('content')
+<img class="bg-video" src="{{ Vite::asset('resources/img/bg/bg-1.png') }}" alt="">
 <div class="container py-5">
   <h1 class="text-center text-orange p-3">Armi</h1>
 <table class="table table-dark table-hover ">

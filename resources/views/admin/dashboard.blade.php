@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+<video class="bg-video" src="{{ Vite::asset('resources/img/video/bg-dashboard.mp4') }}" autoplay muted loop playsinline
+        alt="video bg"></video>
 <div class="container">
     <h2 class=" text-orange my-4">
         {{ __('Dashboard') }}
