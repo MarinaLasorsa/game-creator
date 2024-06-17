@@ -7,9 +7,9 @@
 @section('content')
 <img class="bg-video" src="{{ Vite::asset('resources/img/bg/bg-1.png') }}" alt="">
     <main>
-        <section class="py-4">
+        <section class="py-5">
 
-            <div class="container text-white">
+            <div class="container text-white text-eb-garamond">
                 <form action="{{ route('admin.characters.update', $character) }}" method="POST">
 
                     {{-- Cross Site Request Forgering --}}
@@ -104,7 +104,7 @@
                             placeholder="Descrizione del personaggio">{{ old('description', $character->description) }}</textarea>
                     </div>
 
-                    <button class="btn btn-primary">Modifica</button>
+                    <button class="btn bg-orange text-black">Modifica</button>
                 </form>
                 @if ($errors->any())
                     <div class="alert alert-danger">

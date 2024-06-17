@@ -7,7 +7,7 @@
     <main>
         <section class="py-5">
 
-            <div class="container text-white">
+            <div class="container text-white text-eb-garamond">
                 <h2 class="text-center mb-4 text-orange">Crea un nuovo personaggio!</h2>
 
                 <form action="{{ route('admin.characters.store') }}" method="POST">
@@ -110,7 +110,7 @@
                             placeholder="Descrizione del personaggio">{{ old('description') }}</textarea>
                     </div>
 
-                    <button class="btn btn-primary">Crea</button>
+                    <button class="btn bg-orange text-black">Crea</button>
                 </form>
                 @if ($errors->any())
                     <div class="alert alert-danger">
