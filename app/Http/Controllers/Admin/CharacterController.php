@@ -39,7 +39,6 @@ class CharacterController extends Controller
      */
     public function store(StoreCharacterRequest $request)
     {
-        dd($request->weapons);
         $form_data = $request->validated();
 
         $form_data = $request->all();

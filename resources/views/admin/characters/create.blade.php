@@ -79,8 +79,8 @@
                     </div>
 
                     <div class="my-3">
-                        <div class="form-label ">Armi</div>
-                        <div class="row">
+                        <div class="form-label">Armi</div>
+                        <div class="d-flex flex-wrap gap-3">
                             @foreach ($weapons as $weapon)
                                 @php
                                     $arr_weapons = old('weapons', null);
@@ -91,13 +91,13 @@
                                     //     $value_weapon = '0';
                                     // }
                                 @endphp
-                                <div class="col-3">
-                                    <div class="input-group  mb-3">
-                                        <label class="input-group-text input  "
-                                            for="weapons-{{ $weapon->id }}">{{ $weapon->name }}</label>
-                                        <input type="number" class="form-control " name="weapons[]"
-                                            id="weapons-{{ $weapon->id }}" value="{{$arr_weapons != null ? $arr_weapons[$loop->index] : '0'}}">
-                                    </div>
+                                <div>
+                                    <label for="{{ 'lab_' . $loop->index }}" class="bg-dark p-2 rounded d-inline-block">
+                                        <img src="{{ Vite::asset($weapon->image) }}" alt="" width="30px">
+                                    </label>
+                                    <input type="checkbox" class="d-none" id="{{ 'lab_' . $loop->index }}">
+                                    <input type="number" class="input-checkbox" name="weapons[]" id="weapons-{{ $weapon->id }}"
+                                        value="{{ $arr_weapons != null ? $arr_weapons[$loop->index] : '0' }}">
 
                                 </div>
                             @endforeach
