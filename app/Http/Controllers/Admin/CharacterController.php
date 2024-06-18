@@ -64,8 +64,6 @@ class CharacterController extends Controller
      */
     public function show(Character $character)
     {
-        
-
         $character->load('weapons','users');
         return view('admin.characters.show', compact('character'));
     }

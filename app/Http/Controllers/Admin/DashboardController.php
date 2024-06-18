@@ -15,7 +15,7 @@ class DashboardController extends Controller
     public function index()
     {
         $userCharacters = Character::where('user_id', Auth::id())->get();
-
+        $userCharacters->load('users');
         return view('admin.dashboard', compact('userCharacters'));
     }
 
