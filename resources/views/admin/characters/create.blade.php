@@ -10,7 +10,7 @@
             <div class="container text-white text-eb-garamond">
                 <h2 class="text-center mb-4 text-orange">Crea un nuovo personaggio!</h2>
 
-                <form action="{{ route('admin.characters.store') }}" method="POST">
+                <form  action="{{ route('admin.characters.store') }}" method="POST">
 
                     {{-- Cross Site Request Forgering --}}
                     @csrf
@@ -95,7 +95,7 @@
                                     <div class="input-group  mb-3">
                                         <label class="input-group-text input  "
                                             for="weapons-{{ $weapon->id }}">{{ $weapon->name }}</label>
-                                        <input type="number" class="form-control input-weapon" name="weapons[]"
+                                        <input type="number" class="form-control " name="weapons[]"
                                             id="weapons-{{ $weapon->id }}" value="{{$arr_weapons != null ? $arr_weapons[$loop->index] : '0'}}">
                                     </div>
 
