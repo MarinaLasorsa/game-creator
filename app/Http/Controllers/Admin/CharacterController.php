@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StoreCharacterRequest;
 use App\Http\Requests\UpdateCharacterRequest;
 use App\Models\Type;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class CharacterController extends Controller
@@ -64,9 +65,13 @@ class CharacterController extends Controller
      */
     public function show(Character $character)
     {
-        $character->load('weapons');
+        
+
+        $character->load('weapons','users');
         return view('admin.characters.show', compact('character'));
     }
+
+    
 
     /**
      * Show the form for editing the specified resource.
@@ -127,5 +132,26 @@ class CharacterController extends Controller
     {
         $character->delete();
         return to_route('admin.characters.index');
+    }
+
+    public function toggleSelected(Character $character){
+        
+        $user = User::find(Auth::user()->id);
+        // dd($user);
+        if($user->character_id == $character->id)
+        {
+            $user->character_id = null;
+        }else{
+            $user->character_id = $character->id;
+        }
+        
+        $user->update();
+
+        //$character->attack = 800;
+        // $character->update($character->toArray());
+        //character->update();
+        $character->load('weapons','users');
+        
+        return view('admin.characters.show', compact('character'));
     }
 }

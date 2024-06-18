@@ -35,10 +35,14 @@ Route::middleware(['auth', 'verified'])
   //  Route::resource('weapons', WeaponPageController::class);
 
  
-
+  
+  
   Route::resource('weapons', WeaponPageController::class);
 
   Route::resource('characters', CharacterController::class);
+
+  Route::get('characters/{character}/favorite',[CharacterController::class,'toggleSelected'])->name('characters.toggleSelected');
+  
 });
 
 Route::resource('types', TypeController::class);

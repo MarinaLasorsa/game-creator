@@ -46,4 +46,8 @@ class User extends Authenticatable
 
         return $this->hasMany(Character::class);
     }
+
+    public function character(){
+        return $this->belongsTo(Character::class);
+    }
 }
