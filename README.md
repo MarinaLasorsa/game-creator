@@ -9,7 +9,8 @@ Il sito è stato realizzato utilizzando Laravel, sfruttando appieno le potenzial
 
 Il sito è stato realizzato utilizzando Laravel, sfruttando appieno le potenzialità di Blade, Bootstrap e Sass per la parte grafica. Per la gestione dell'autenticazione, è stato impiegato il pacchetto Laravel Breeze che insieme a Laravel Sanctum garantiscono sicurezza e efficienza.
 ---
-![alt text](https://github.com/MarinaLasorsa/game-creator/blob/main/preview.png?raw=true)
+[![alt text](https://raw.githubusercontent.com/MarinaLasorsa/game-creator/main/preview.png)](https://pj-preview-video.netlify.app/warrior)
+ [" Clicca sull'immagine per vedere la preview del sito "](https://pj-preview-video.netlify.app/warrior)
 
 # Dopo aver clonato lanciare
 - npm i
