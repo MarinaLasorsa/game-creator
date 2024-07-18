@@ -1,32 +1,15 @@
-# TO DO LIST
+# WARRIOR
+Il nostro sito è un gestionale avanzato per la creazione e la gestione di personaggi per giochi di ruolo. Gli utenti possono iscriversi e accedere a un'area privata dove possono creare personaggi scegliendo tra nove tipologie diverse. Potrai decidere il nome, il sesso, una descrizione dettagliata, i livelli di abilità e l'equipaggiamento iniziale del tuo personaggio. 
 
-## IMPORTANTE
+Avrai inoltre la possibilità di selezionare il personaggio primario con cui giocare e di visualizzare i personaggi creati dagli altri giocatori. Tutte le armi hanno un costo specifico e un dado assegnato. Ogni classe di personaggio dispone di una descrizione accurata per aiutarti a comprendere meglio il tuo ruolo all'interno del gioco. 
 
+Questo strumento di gestione è pensato per stimolare la tua creatività e migliorare l'esperienza di gioco. Buon divertimento!
 
+Il sito è stato realizzato utilizzando Laravel, sfruttando appieno le potenzialità di Blade, Bootstrap e Sass per la parte grafica. Per la gestione dell'autenticazione, è stato impiegato il pacchetto Laravel Breeze insieme a Laravel Sanctum, garantendo sicurezza e efficienza.
 
-
-   
-- Aggiungere crud (solo index e show ) di type
-
-- sistemare header
-- sistemare vista create a livello grafico
-- creare una pagina 404
-    
-    
-- In DASHBOARD inserire contenuto:
-    
-    - Creare un personaggio
-    
-    - Cancellare un personaggio
-- 
-
-
-## BONUS
-
-- Grafica generale
-
-
-
+Il sito è stato realizzato utilizzando Laravel, sfruttando appieno le potenzialità di Blade, Bootstrap e Sass per la parte grafica. Per la gestione dell'autenticazione, è stato impiegato il pacchetto Laravel Breeze che insieme a Laravel Sanctum garantiscono sicurezza e efficienza.
+---
+![alt text](https://github.com/MarinaLasorsa/game-creator/blob/main/preview.png?raw=true)
 
 # Dopo aver clonato lanciare
 - npm i
@@ -38,43 +21,3 @@
 - php artisan serve  
 ### IN UN SECONSO TERMINALE
 - npm run dev
-
-## CMD crezione CRUD
-- php artisan make:model NomeSingolarePrimaLetteraMaiuscola -a
-
-cancellare controller se nella cartella sbagliata
-- php artisan make:controller cartellaGiusta/PageController -r --model=ModelName
-
-## CMD utili
-- php artisan make:model NomeSingolarePrimaLetteraMaiuscola -a
-- php artisan make:model NomeSingolarePrimaLetteraMaiuscola -m
-- php artisan make:controller --help
-- php artisan make:controller PageController
-- php artisan make:controller PageController -r --model[=Model]
-- php artisan make:migration nome_della_migration
-- php artisan make:migration create_users_table
-- php artisan make:migration update_users_table --table=users
-- php artisan make:migration add_phone_nunber_to_users_table
-- php artisan migrate --help
-- php artisan migrate:rollback
-- php artisan migrate:status
-- php artisan make:seeder TrainsSeeder
-- php artisan db:seed --class=TrainsSeeder
-
-- php artisan route:list
-
-Route::resource('pastas', PastaController::class);
-
-
-https://laravel.com/docs/10.x/seeding
-https://fakerphp.org
-
-
-composer create-project laravel/laravel:^10.0 laravel-auth-template
-cd C:\Users\antoc\Dev\gitRepository\laravel-auth-template
-composer require laravel/breeze --dev
- aggiungere "type": "module", in package.json
-php artisan breeze:install
-composer require pacificdev/laravel_9_preset
-php artisan preset:ui bootstrap --auth 
-npm i   

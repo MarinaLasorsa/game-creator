@@ -30,7 +30,7 @@ class CharacterController extends Controller
     public function create()
     {
         $types = Type::orderBy('name')->get();
-        $weapons = Weapon::orderBy('name', 'asc')->get();
+        $weapons = Weapon::get();
         return view('admin.characters.create', compact('weapons', 'types'));
     }
 
@@ -39,18 +39,20 @@ class CharacterController extends Controller
      */
     public function store(StoreCharacterRequest $request)
     {
+
         $form_data = $request->validated();
 
         $form_data = $request->all();
 
+
+
         $form_data['user_id'] = Auth::id();
         $new_character = Character::create($form_data);
-
 
         $weapons_with_qty = [];
         foreach ($request->weapons as $weapon_id => $quantity) {
             if ($quantity > 0) {
-                $weapons_with_qty[$weapon_id] = ['quantity' => $quantity];
+                $weapons_with_qty[$weapon_id + 1] = ['quantity' => $quantity];
             }
         }
         $new_character->weapons()->attach($weapons_with_qty);
@@ -64,11 +66,11 @@ class CharacterController extends Controller
      */
     public function show(Character $character)
     {
-        $character->load('weapons','users');
+        $character->load('weapons', 'users');
         return view('admin.characters.show', compact('character'));
     }
 
-    
+
 
     /**
      * Show the form for editing the specified resource.
@@ -131,24 +133,24 @@ class CharacterController extends Controller
         return to_route('admin.characters.index');
     }
 
-    public function toggleSelected(Character $character){
-        
+    public function toggleSelected(Character $character)
+    {
+
         $user = User::find(Auth::user()->id);
         // dd($user);
-        if($user->character_id == $character->id)
-        {
+        if ($user->character_id == $character->id) {
             $user->character_id = null;
-        }else{
+        } else {
             $user->character_id = $character->id;
         }
-        
+
         $user->update();
 
         //$character->attack = 800;
         // $character->update($character->toArray());
         //character->update();
-        $character->load('weapons','users');
-        
+        $character->load('weapons', 'users');
+
         return view('admin.characters.show', compact('character'));
     }
 }

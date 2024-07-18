@@ -74,8 +74,8 @@ class TypeSeeder extends Seeder
             [
                 'name' => 'Monk',
                 'img-carosel' => 'resources/img/carosel/9.png',
-                'img-m' => 'resources/img/players/17.png',
-                'img-f' => 'resources/img/players/18.png',
+                'img-m' => 'resources/img/players/18.png',
+                'img-f' => 'resources/img/players/17.png',
                 'description' => "Incarnerai la disciplina, la spiritualità e la maestria nelle arti marziali. Addestrato in templi nascosti e fortezze remote, il Monk combina una forza fisica straordinaria con una mente zen. Con una padronanza del combattimento a mani nude e delle armi tradizionali, puoi sferrare colpi rapidi e precisi, immobilizzare i nemici e proteggere i tuoi alleati con movimenti fluidi e letali. La tua connessione con le energie interiori ti consente di canalizzare poteri mistici per guarire, proteggere e infliggere danni devastanti. Sei pronto a dimostrare il potere della tua disciplina e a portare armonia nelle Terre Selvagge con la saggezza e la forza di un vero Monk?"
             ],
 
