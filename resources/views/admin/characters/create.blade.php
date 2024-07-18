@@ -80,7 +80,6 @@
 
                     <div class="my-3">
                         <div class="form-label">Armi</div>
-                        @dump($weapons)
                         <div class="d-flex flex-wrap gap-3">
                             @foreach ($weapons as $weapon)
                                 @php
